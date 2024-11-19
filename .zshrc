@@ -33,8 +33,15 @@ alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
 
-alias hx='~/.local/bin/helix-24.07.AppImage'
 alias t='tmux'
+alias lg='lazygit'
+
+alias nv='nvim'
+alias snv='sudo nvim'
+alias nvleet='nvim leetcode.nvim'
+alias cddots='cd ~/.dotfiles'
+alias nvconf='cd ~/.dotfiles/nvim && nvim'
+alias cdp='cd ~/projects'
 # completion using arrow keys (based on history)
 bindkey '^[[h' history-search-backward
 bindkey '^[[l' history-search-forward
