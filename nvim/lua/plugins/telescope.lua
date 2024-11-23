@@ -113,6 +113,19 @@ return {
 				initial_mode = "normal",
 			})
 		end, { desc = "Diagnostics Buffer" })
+		vim.keymap.set("n", "<leader>mq", function()
+			require("telescope.builtin").quickfix({
+				bfnr = 0,
+				wrap_results = true,
+				line_width = "full",
+				layout_config = {
+					vertical = { width = 92, height = 50 },
+					preview_height = 0.5,
+				},
+				initial_mode = "normal",
+			})
+		end, { desc = "QuickFix" })
+		-- Close/Delete buffer -----------------------------------------------------------
 		require("telescope").setup({
 			defaults = {
 				version = true,
