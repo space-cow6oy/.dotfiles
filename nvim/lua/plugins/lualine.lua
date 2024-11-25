@@ -98,7 +98,7 @@ return {
 					lualine_x = {
 
 						buffers,
-						"filename",
+						-- "filename",
 					},
 					lualine_y = {
 						"diff",
