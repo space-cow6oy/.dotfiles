@@ -7,9 +7,8 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					-- Conform will run multiple formatters sequentially
 					python = { "ruff_format" },
-					-- javascript = { "prettier" },
+					htmldjango = { "djlint" },
 				},
 			})
 			vim.api.nvim_create_autocmd("BufWritePre", {
