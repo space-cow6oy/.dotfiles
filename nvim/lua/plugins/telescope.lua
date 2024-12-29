@@ -5,7 +5,7 @@ return {
 	dependencies = { "nvim-lua/plenary.nvim" },
 	config = function()
 		-- FOCUS PREVIEW -----------------------------------------------------------------
-
+		-- Function for tab between results and preview
 		local focus_preview = function(prompt_bufnr)
 			local action_state = require("telescope.actions.state")
 			local picker = action_state.get_current_picker(prompt_bufnr)
@@ -26,19 +26,55 @@ return {
 			)
 			-- api.nvim_set_current_win(winid)
 		end
-		-- NOTE: Which KEY docs
+		-- ------------- -----------------------------------------------------------------
+		local default_mappings = {
+			n = {
+				["q"] = require("telescope.actions").close,
+				["dd"] = require("telescope.actions").delete_buffer,
+				["<Tab>"] = focus_preview,
+			},
+		}
+		local book = {
+			version = true,
+			wrap_results = true,
+			layout_strategy = "horizontal",
+			layout_config = {
+				horizontal = { width = 0.99, height = 0.9 },
+				preview_width = 92,
+			},
+			mappings = default_mappings,
+		}
+
+		local desktop = {
+			wrap_results = true,
+			layout_strategy = "vertical",
+			layout_config = {
+				preview_height = 0.7,
+				vertical = {
+					height = 0.99,
+					preview_cutoff = 0,
+					prompt_position = "bottom",
+					width = 92,
+				},
+			},
+			mappings = default_mappings,
+		}
+
+		local current_defaults = desktop
+
+		-- NOTE: Which KEY docs ----------------------------------------------------------
 		local wk = require("which-key")
 		wk.add({
 			{ "<leader>t", group = "TELESCOPE" }, -- group
 		})
+		-- ------------- -----------------------------------------------------------------
+
+		-- NOTE: FIND --------------------------------------------------------------------
 		local builtin = require("telescope.builtin")
 		local actions = require("telescope.actions")
-		vim.keymap.set(
-			"n",
-			"<leader>tt",
-			builtin.find_files,
-			{ desc = "Telescope find files" }
-		)
+		vim.keymap.set("n", "<leader>tt", function()
+			builtin.find_files()
+		end, { desc = "Telescope find files" })
 		vim.keymap.set(
 			"n",
 			"<leader>tg",
@@ -64,7 +100,8 @@ return {
 			builtin.help_tags,
 			{ desc = "Telescope help tags" }
 		)
-		-- LSP ---------------------------------------------------------------------------
+		-- ------------- -----------------------------------------------------------------
+		-- NOTE: LSP ---------------------------------------------------------------------
 		vim.keymap.set(
 			"n",
 			"<leader>tr",
@@ -89,7 +126,8 @@ return {
 			builtin.lsp_type_definitions,
 			{ desc = "LSP type defenitions" }
 		)
-		-- Diagnostics -------------------------------------------------------------------
+		-- ------------- -----------------------------------------------------------------
+		-- NOTE: Diagnostics -------------------------------------------------------------
 		vim.keymap.set("n", "<leader>mm", function()
 			require("telescope.builtin").diagnostics({
 				wrap_results = true,
@@ -125,24 +163,11 @@ return {
 				initial_mode = "normal",
 			})
 		end, { desc = "QuickFix" })
-		-- Close/Delete buffer -----------------------------------------------------------
+		-- ------------- -----------------------------------------------------------------
+		-- NOTE: Defaults ----------------------------------------------------------------
 		require("telescope").setup({
-			defaults = {
-				version = true,
-				wrap_results = true,
-				layout_strategy = "vertical",
-				layout_config = {
-					vertical = { width = 92, height = 50 },
-					preview_height = 0.7,
-				},
-				mappings = {
-					n = {
-						["q"] = require("telescope.actions").close,
-						["dd"] = require("telescope.actions").delete_buffer,
-						["<Tab>"] = focus_preview,
-					},
-				},
-			},
+			defaults = current_defaults,
 		})
+		-- ------------- -----------------------------------------------------------------
 	end,
 }
