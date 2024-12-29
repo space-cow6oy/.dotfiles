@@ -81,7 +81,7 @@ return {
 			builtin.live_grep,
 			{ desc = "Telescope live grep" }
 		)
-		vim.keymap.set("n", "<leader>tb", function()
+		vim.keymap.set("n", "<leader>b", function()
 			builtin.buffers({
 				sort_mru = true,
 				sort_lastuesed = true,
