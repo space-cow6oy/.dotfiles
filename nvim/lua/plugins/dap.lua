@@ -53,7 +53,7 @@ return {
 			-- https://github.com/mfussenegger/nvim-dap/blob/master/doc/dap.txt
 			dap.adapters.python = {
 				type = "executable",
-				command = "/home/artem/.local/share/nvim/mason/packages/debugpy/venv/bin/python3",
+				-- command = "/home/artem/.local/share/nvim/mason/packages/debugpy/venv/bin/python3",
 				args = { "-m", "debugpy.adapter" },
 			}
 
@@ -157,18 +157,19 @@ return {
 			"mfussenegger/nvim-dap",
 		},
 		config = function()
-			function get_python_path()
-				-- Check if there's an active virtual environment
-				local venv_path = os.getenv("VIRTUAL_ENV")
-				if venv_path then
-					return venv_path .. "/bin/python3"
-				else
-					return "/usr/bin/python3"
-				end
-			end
+			-- function get_python_path()
+			-- 	-- Check if there's an active virtual environment
+			-- 	local venv_path = os.getenv("VIRTUAL_ENV")
+			-- 	if venv_path then
+			-- 		return venv_path .. "/bin/python3"
+			-- 	else
+			-- 		return "/usr/bin/python3"
+			-- 	end
+			-- end
 
-			local path = get_python_path()
-			require("dap-python").setup(path)
+			-- local path = get_python_path()
+			-- require("dap-python").setup(path)
+			require("dap-python").setup()
 		end,
 	},
 }

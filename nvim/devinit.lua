@@ -1,0 +1,1 @@
+/home/artem/.dotfiles/nvdev/devinit.lua

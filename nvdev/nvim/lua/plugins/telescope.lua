@@ -1,8 +1,10 @@
 return {
 	"nvim-telescope/telescope.nvim",
-	-- tag = "0.1.8",
-	branch = "master",
-	dependencies = { "nvim-lua/plenary.nvim" },
+	-- branch = "master",
+	dependencies = {
+	  "nvim-lua/plenary.nvim",
+	   { 'nvim-telescope/telescope-fzf-native.nvim', build = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release' }
+	},
 	config = function()
 		-- FOCUS PREVIEW -----------------------------------------------------------------
 		-- Function for tab between results and preview
@@ -34,32 +36,27 @@ return {
 				["<Tab>"] = focus_preview,
 			},
 		}
-		local book = {
-			version = true,
-			wrap_results = true,
-			layout_strategy = "horizontal",
-			layout_config = {
-				horizontal = { width = 0.99, height = 0.9 },
-				preview_width = 92,
-			},
-			mappings = default_mappings,
-		}
+		-- local book = {
+		-- 	version = true,
+		-- 	wrap_results = true,
+		-- 	layout_strategy = "horizontal",
+		-- 	layout_config = {
+		-- 		horizontal = { width = 0.99, height = 0.9 },
+		-- 		preview_width = 92,
+		-- 	},
+		-- 	mappings = default_mappings,
+		-- }
 
 		local desktop = {
-			file_ignore_patterns = {
-				"node_modules",
-				"venv",
-				"%.webp",
-			},
 			wrap_results = true,
 			layout_strategy = "vertical",
 			layout_config = {
-				preview_height = 0.7,
+				preview_height = 0.6,
 				vertical = {
 					height = 0.99,
 					preview_cutoff = 0,
 					prompt_position = "bottom",
-					width = 92,
+					width = 0.99,
 				},
 			},
 			mappings = default_mappings,
@@ -67,16 +64,9 @@ return {
 
 		local current_defaults = desktop
 
-		-- NOTE: Which KEY docs ----------------------------------------------------------
-		local wk = require("which-key")
-		wk.add({
-			{ "<leader>t", group = "TELESCOPE" }, -- group
-		})
-		-- ------------- -----------------------------------------------------------------
-
 		-- NOTE: FIND --------------------------------------------------------------------
 		local builtin = require("telescope.builtin")
-		local actions = require("telescope.actions")
+		-- local actions = require("telescope.actions")
 		vim.keymap.set("n", "<leader>tt", function()
 			builtin.find_files()
 		end, { desc = "Telescope find files" })
@@ -127,8 +117,7 @@ return {
 		end, { desc = "LSP definitions" })
 		vim.keymap.set(
 			"n",
-			"<leader>tp",
-			builtin.lsp_type_definitions,
+			"<leader>tp", builtin.lsp_type_definitions,
 			{ desc = "LSP type defenitions" }
 		)
 		-- ------------- -----------------------------------------------------------------
@@ -136,22 +125,26 @@ return {
 		vim.keymap.set("n", "<leader>mm", function()
 			require("telescope.builtin").diagnostics({
 				wrap_results = true,
+				root_dir = true,
+			  -- {root_dir}            (string|boolean)  if set to string, get
+			  --                                         diagnostics only for buffers
+			  --                                         under this dir otherwise cwd
 				line_width = "full",
 				layout_config = {
-					vertical = { width = 92, height = 50 },
-					preview_height = 0.5,
+					-- vertical = { width = 92, height = 50 },
+					preview_height = 0.6,
 				},
 				initial_mode = "normal",
 			})
 		end, { desc = "Diagnostics" })
 		vim.keymap.set("n", "<leader>mb", function()
 			require("telescope.builtin").diagnostics({
-				bfnr = 0,
+				bufnr = 0,
 				wrap_results = true,
 				line_width = "full",
 				layout_config = {
-					vertical = { width = 92, height = 50 },
-					preview_height = 0.5,
+					-- vertical = { width = 92, height = 50 },
+					preview_height = 0.6,
 				},
 				initial_mode = "normal",
 			})
@@ -163,7 +156,7 @@ return {
 				line_width = "full",
 				layout_config = {
 					vertical = { width = 92, height = 50 },
-					preview_height = 0.5,
+					preview_height = 0.6,
 				},
 				initial_mode = "normal",
 			})

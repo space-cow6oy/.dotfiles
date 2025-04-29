@@ -1,4 +1,4 @@
--- Line Nnumbers
+--Line Nnumbers
 vim.wo.number = true
 vim.wo.relativenumber = false
 
@@ -23,32 +23,32 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 
 -- Ruler
-vim.api.nvim_set_option_value("colorcolumn", "91", {})
+vim.api.nvim_set_option_value("colorcolumn", "120", {})
 
 -- Highlight current line
 vim.opt.cursorline = true
 -- Fillchars
 vim.opt.fillchars = {
-	vert = "│",
-	fold = "⠀",
-	eob = " ", -- suppress ~ at EndOfBuffer
-	-- diff = "⣿", -- alternatives = ⣿ ░ ─ ╱
-	msgsep = "‾",
-	foldopen = "▾",
-	foldsep = "│",
-	foldclose = "▸",
+  vert = "│",
+  fold = "⠀",
+  eob = " ", -- suppress ~ at EndOfBuffer
+  -- diff = "⣿", -- alternatives = ⣿ ░ ─ ╱
+  msgsep = "‾",
+  foldopen = "▾",
+  foldsep = "│",
+  foldclose = "▸",
 } -- Disable virtual_text since it's redundant due to lsp_lines.
 
 vim.diagnostic.config({
-	virtual_text = false,
-	-- signs = {
-	-- 	linehl = {
-	-- 		[vim.diagnostic.severity.ERROR] = "DiagnosticErrorLn",
-	-- 		[vim.diagnostic.severity.WARN] = "DiagnosticWarnLn",
-	-- 		[vim.diagnostic.severity.INFO] = "DiagnosticInfoLn",
-	-- 		[vim.diagnostic.severity.HINT] = "DiagnosticHintLn",
-	-- 	},
-	-- },
+  virtual_text = false,
 })
 
 vim.o.exrc = true
+
+-- Terminal
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = vim.api.nvim_create_augroup("custom-terminal-open", { clear = true }),
+  callback = function()
+    vim.opt.number = false
+  end,
+})

@@ -37,3 +37,27 @@ vim.keymap.set(
 	":lua vim.diagnostic.open_float()<CR>",
 	{ desc = "Error float" }
 )
+-- RESIZING ------------------------------------------------------------------------------
+vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
+vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
+vim.keymap.set("n", "+", [[<cmd>horizontal resize +2<cr>]]) -- make the window bigger horizontally by pressing shift and =
+vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window smaller horizontally by pressing shift and -
+
+-- DADBOD --------------------------------------------------------------------------------
+vim.keymap.set("n", "<leader>s", "{jV}k<plug>(DBUI_ExecuteQuery))")
+vim.keymap.set("n", "<leader>db", "<cmd>DBUI<CR>")
+
+-- JUPYTER ------------------------------------------------------------------------------
+vim.keymap.set("n", "<leader>e", "<cmd>JupyniumExecuteSelectedCells<CR>")
+vim.keymap.set("n", "<leader>ja", "<cmd>JupyniumStartAndAttachToServer<CR>")
+
+vim.keymap.set("n", "<leader>jc", function()
+	return "<cmd>JupyniumStartSync " .. vim.fn.expand("%:r:r") .. "<CR>"
+end, { expr = true })
+
+vim.keymap.set("n", "<leader>jt", "<cmd>JupyniumStartSync 2<CR>y<CR>")
+
+vim.keymap.set("n", "<leader>jn", "^i# %%<Esc>j^i")
+
+local covichki = '"""'
+vim.keymap.set("n", "<leader>jm", '^i# %% [md]<Esc>ji"""<C-c>jji"""<C-c>ki')

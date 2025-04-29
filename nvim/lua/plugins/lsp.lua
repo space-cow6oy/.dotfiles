@@ -3,15 +3,15 @@ return {
 	"neovim/nvim-lspconfig",
 	config = function()
 		local lspconfig = require("lspconfig")
-		function get_python_path()
-			-- Check if there's an active virtual environment
-			local venv_path = os.getenv("VIRTUAL_ENV")
-			if venv_path then
-				return venv_path .. "/bin/python3"
-			else
-				return "/usr/bin/python3"
-			end
-		end
+		-- function get_python_path()
+		-- 	-- Check if there's an active virtual environment
+		-- 	local venv_path = os.getenv("VIRTUAL_ENV")
+		-- 	if venv_path then
+		-- 		return venv_path .. "/bin/python3"
+		-- 	else
+		-- 		return "/usr/bin/python3"
+		-- 	end
+		-- end
 
 		-- Specify how the border looks like
 		local border = {
@@ -57,7 +57,7 @@ return {
 			handlers = handlers,
 			settings = {
 				python = {
-					pythonPath = get_python_path(),
+					-- pythonPath = get_python_path(),
 				},
 			},
 		})
