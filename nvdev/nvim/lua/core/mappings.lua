@@ -1,9 +1,6 @@
 -- Leader --------------------------------------------------------------------------------
 vim.g.mapleader = " "
 
--- Source --------------------------------------------------------------------------------
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-
 -- Jumping --------------------------------------------------------------------------------
 vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
@@ -40,6 +37,7 @@ vim.keymap.set("n", "<leader>lg", function()
 end)
 -- LazyGit ------------------------------------------------------------------------------
 vim.keymap.set("n", "<leader>lg", "<cmd>term<CR>ilazygit<CR>")
+
 -- Comments -----------------------------------------------------------------------------
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
@@ -55,10 +53,26 @@ autocmd("FileType", {
 })
 
 -- Explorer ------------------------------------------------------------------------------
-vim.cmd([[
-  augroup netrw_mappings
-    autocmd!
-    autocmd FileType netrw nmap <buffer> h -^ 
-	autocmd FileType netrw nmap <buffer> l <CR>
-  augroup END
-]])
+vim.keymap.set("n", "<leader>e", "<cmd>Le<CR>")
+
+vim.keymap.set(
+  "n",
+  "<leader>rr",
+  "<Cmd>lua vim.g.get_new_access_key()<CR><Cmd>cq<CR>",
+  { noremap = true, silent = true }
+)
+
+-- load the session for the current directory
+vim.keymap.set("n", "<leader>qs", function()
+  require("persistence").load()
+end)
+
+-- Кусок кода, который позволяет ливать из вима через rr и сразу переоткрывать вим
+-- #!~/bin/bash
+--
+-- while true; do
+--     /usr/bin/nvim "$@"  # change path to real nvim binary as necessary
+--     if [ $? -ne 1 ]; then
+--         break
+--     fi
+-- done

@@ -2,18 +2,16 @@ return {
   {
     -- There are ensure install for formatters somewhere
     "stevearc/conform.nvim",
-    opts = {},
     config = function()
       require("conform").setup({
         formatters_by_ft = {
           lua = { "stylua" },
-          python = { "ruff_format" },
-          htmldjango = { "djlint" },
-          html = { "prettier" },
-          css = { "prettier" },
-          javascriptreact = { "prettier" },
-          javascript = { "prettier" },
-          jsx = { "prettier" },
+          jsx = { "prettier", "prettierd" },
+          json = { "prettier", "prettierd" },
+          javascript = { "prettier", "prettierd" },
+          javascriptreact = { "prettier", "prettierd" },
+          css = { "prettier", "prettierd" },
+          html = { "prettier", "prettierd" },
         },
       })
       vim.api.nvim_create_autocmd("BufWritePre", {

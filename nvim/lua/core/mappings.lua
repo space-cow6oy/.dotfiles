@@ -20,15 +20,30 @@ vim.keymap.set("n", "<leader>li", "<cmd>Leet info<CR>", { desc = "Info" })
 vim.keymap.set("n", "<leader>lr", "<cmd>Leet test<CR>", { desc = "Run Tests" })
 vim.keymap.set("n", "<leader>ls", "<cmd>Leet submit<CR>", { desc = "Submit" })
 vim.keymap.set("n", "<leader>lt", "<cmd>Leet tabs<CR>", { desc = "Tabs" })
-vim.keymap.set("n", "<leader>ll", "<cmd>Leet list<CR>", { desc = "List of problems" })
+vim.keymap.set(
+	"n",
+	"<leader>ll",
+	"<cmd>Leet list<CR>",
+	{ desc = "List of problems" }
+)
 vim.keymap.set(
 	"n",
 	"<leader>lq",
 	"<cmd>Leet reset<CR>",
 	{ desc = "Reset code to default" }
 )
-vim.keymap.set("n", "<leader>ld", "<cmd>Leet desc<CR>", { desc = "Toggle desc" })
-vim.keymap.set("n", "<leader>lu", "<cmd>Leet update<CR>", { desc = "Update cookie" })
+vim.keymap.set(
+	"n",
+	"<leader>ld",
+	"<cmd>Leet desc<CR>",
+	{ desc = "Toggle desc" }
+)
+vim.keymap.set(
+	"n",
+	"<leader>lu",
+	"<cmd>Leet update<CR>",
+	{ desc = "Update cookie" }
+)
 
 -- Errors -----------------------------------------------------------------------------
 vim.keymap.set(
@@ -61,3 +76,10 @@ vim.keymap.set("n", "<leader>jn", "^i# %%<Esc>j^i")
 
 local covichki = '"""'
 vim.keymap.set("n", "<leader>jm", '^i# %% [md]<Esc>ji"""<C-c>jji"""<C-c>ki')
+
+vim.api.nvim_set_keymap(
+	"n",
+	"<leader>rr",
+	":cq<CR>",
+	{ noremap = true, silent = true }
+)

@@ -15,6 +15,9 @@ return {
       },
     },
     config = function()
+      vim.diagnostic.config({
+        float = { border = "rounded" },
+      })
       local lspconfig = require("lspconfig")
       lspconfig.lua_ls.setup({})
       lspconfig.ts_ls.setup({})
