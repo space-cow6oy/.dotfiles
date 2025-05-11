@@ -4,6 +4,7 @@ config.font_size = 16.55
 
 -- config.font = wezterm.font("MesloLGS NF")
 config.font = wezterm.font("JetBrains Mono")
+-- фонты лежат в ~/local/share/fonts
 
 config.max_fps = 120
 config.enable_tab_bar = false

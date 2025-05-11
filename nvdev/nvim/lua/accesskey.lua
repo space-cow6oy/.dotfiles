@@ -1,3 +1,5 @@
+-- https://developers.sber.ru/docs/ru/gigachat/certificates
+-- чтобы иметь доступ к чат апи нужно установить сертификаты минцифр
 local M = {}
 
 local curl = require("plenary.curl")
