@@ -3,6 +3,7 @@ require("core.configs")
 require("core.mappings")
 require("core.lazy")
 require("core.status_line")
+require("core.matcher")
 
 -- Gruvbox
 vim.o.background = "dark" -- or "light" for light mode
