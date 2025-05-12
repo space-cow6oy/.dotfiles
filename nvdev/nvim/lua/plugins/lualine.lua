@@ -62,7 +62,7 @@ return {
               return os.date("%H:%M %a %d %b")
             end,
           },
-          lualine_z = {}, -- "location"
+          lualine_z = { "location" }, -- "location"
         },
       })
     end,

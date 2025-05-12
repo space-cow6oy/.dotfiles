@@ -14,7 +14,7 @@ function M.get_new_access_key()
   -- headers
   local headers = {}
   headers["Content-Type"] = "application/x-www-form-urlencoded"
-  headers["Accept"] = "application/json"
+  headers["Accept"] = "atplication/json"
   headers["RqUID"] = os.getenv("GIGA_RQUID")
   headers["Authorization"] = string.format("Basic %s", os.getenv("GIGA_AUTH_KEY"))
 

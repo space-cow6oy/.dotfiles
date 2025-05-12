@@ -21,7 +21,7 @@ cmd("highlight lCursor guifg=NONE guibg=Cyan")
 vim.keymap.set("i", "rr", "<C-^>")
 
 -- Errors -----------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>mh", ":lua vim.diagnostic.open_float()<CR>", { desc = "Error float" })
+vim.keymap.set("n", "<leader>h", ":lua vim.diagnostic.open_float()<CR>", { desc = "Error float" })
 -- RESIZING ------------------------------------------------------------------------------
 vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
 vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
@@ -36,7 +36,7 @@ vim.keymap.set("n", "<leader>lg", function()
   vim.fn.chansend(job_id, { "lazygit\r\n" })
 end)
 -- LazyGit ------------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>lg", "<cmd>term<CR>ilazygit<CR>")
+-- vim.keymap.set("n", "<leader>lg", "<cmd>term<CR>ilazygit<CR>")
 
 -- Comments -----------------------------------------------------------------------------
 local autocmd = vim.api.nvim_create_autocmd
@@ -76,3 +76,11 @@ end)
 --         break
 --     fi
 -- done
+
+-- HOP ------------------------------------------------------------------------------------
+vim.keymap.set("n", "f", function()
+  require("hop").hint_words()
+end)
+vim.keymap.set("v", "f", function()
+  require("hop").hint_words()
+end)

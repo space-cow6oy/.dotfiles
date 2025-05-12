@@ -14,6 +14,9 @@ local get_new_access_key = accesskey.get_new_access_key
 
 vim.g.get_new_access_key = get_new_access_key
 
+-- print(vim.inspect(vim.fn.getpos(".")))
+-- print(vim.inspect(vim.fn.getpos("v")))
+
 -- vim.api.nvim_create_autocmd("BufWritePre", {
 --   pattern = "*", -- Применяется ко всем файлам
 --   callback = function()
