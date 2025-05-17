@@ -36,6 +36,7 @@ alias t='tmux'
 alias lg='lazygit'
 
 alias nv='XDG_CONFIG_HOME=~/.config/nvdev/ nvim'
+alias nvp='XDG_CONFIG_HOME=~/.config/nvp/ nvim'
 alias snv='sudo nvim'
 alias nvleet='nvim leetcode.nvim'
 alias cddots='cd ~/.dotfiles'

@@ -21,7 +21,9 @@ cmd("highlight lCursor guifg=NONE guibg=Cyan")
 vim.keymap.set("i", "rr", "<C-^>")
 
 -- Errors -----------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>h", ":lua vim.diagnostic.open_float()<CR>", { desc = "Error float" })
+vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Error float" })
+vim.keymap.set("n", "<leader>h", ":lua vim.lsp.hover()<CR>", { desc = "Error float" })
+
 -- RESIZING ------------------------------------------------------------------------------
 vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
 vim.keymap.set("n", "-", [[<cmd>vertical resize -5<cr>]]) -- make the window smaller vertically
@@ -84,3 +86,8 @@ end)
 vim.keymap.set("v", "f", function()
   require("hop").hint_words()
 end)
+
+-- SPIDER ---------------------------------------------------------------------------------
+vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<CR>")
+vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>")
+vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
