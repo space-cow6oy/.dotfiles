@@ -37,7 +37,7 @@ return {
 
         options = {
           globalstatus = true,
-          theme = require("../line_theme").theme(),
+          theme = require("/my/line_theme").theme(),
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
         },

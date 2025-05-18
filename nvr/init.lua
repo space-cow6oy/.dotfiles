@@ -2,8 +2,8 @@
 require("core.configs")
 require("core.mappings")
 require("core.lazy")
-require("my.matcher")
-require("my.messages")
+require("core.matcher")
+require("core.messages")
 require("core_nvim.mappings")
 require("core_nvim.configs")
 
