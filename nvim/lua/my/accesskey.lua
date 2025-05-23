@@ -14,15 +14,17 @@ function M.get_new_access_key()
   -- headers
   local headers = {}
   headers["Content-Type"] = "application/x-www-form-urlencoded"
-  headers["Accept"] = "atplication/json"
+  headers["Accept"] = "application/json"
   headers["RqUID"] = os.getenv("GIGA_RQUID")
   headers["Authorization"] = string.format("Basic %s", os.getenv("GIGA_AUTH_KEY"))
-
+  print(vim.inspect(headers))
   -- payload for request
   local payload = { headers = headers, data = scope }
 
   -- making request
   local response = curl.post(request_url, payload)
+
+  print(vim.inspect(response))
   -- request parsing
   local parsed_response = vim.fn.json_decode(response.body)
 

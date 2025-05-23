@@ -23,10 +23,12 @@ return {
           vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
 
           vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename Symbol" })
+          vim.keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code Action" })
         end,
       })
 
       lspconfig.lua_ls.setup({})
+      lspconfig.ruby_lsp.setup({})
     end,
   },
 }
