@@ -18,12 +18,11 @@ cmd("set keymap=russian-jcukenwin")
 cmd("set iminsert=0")
 cmd("set imsearch=0")
 cmd("highlight lCursor guifg=NONE guibg=Cyan")
-vim.keymap.set("i", "rr", "<C-^>")
+vim.keymap.set("i", "ll", "<C-^>")
 
 -- Errors -----------------------------------------------------------------------------
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Error float" })
 vim.keymap.set("n", "<leader>h", ":lua vim.lsp.buf.hover({border = 'rounded'})<CR>", { desc = "Error float" })
-
 
 -- RESIZING ------------------------------------------------------------------------------
 vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
@@ -51,7 +50,7 @@ vim.keymap.set("n", "<leader>e", "<cmd>Le<CR>")
 
 vim.keymap.set(
   "n",
-  "<leader>rr",
+  "<leader>rn",
   "<Cmd>lua vim.g.get_new_access_key()<CR><Cmd>cq<CR>",
   { noremap = true, silent = true }
 )
@@ -87,6 +86,6 @@ vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<C
 vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
 
 -- SIGNARUTRE -----------------------------------------------------------------------------
-vim.keymap.set({ 'n' }, '<Leader>k', function()
- vim.lsp.buf.signature_help({border = 'rounded'})
-end, { silent = true, noremap = true, desc = 'toggle signature' })
+vim.keymap.set({ "n" }, "<Leader>k", function()
+  vim.lsp.buf.signature_help({ border = "rounded" })
+end, { silent = true, noremap = true, desc = "toggle signature" })
