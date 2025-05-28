@@ -26,13 +26,6 @@ return {
           ["<C-f>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<a-h>"] = cmp.mapping.abort(),
-          ["<Tab>"] = function(fallback)
-            if cmp.visible() then
-              cmp.mapping.close()(fallback)
-            else
-              cmp.mapping.complete()(fallback)
-            end
-          end,
           ["<a-l>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
           ["<a-j>"] = cmp.mapping(function(fallback)
             if cmp.visible() then
