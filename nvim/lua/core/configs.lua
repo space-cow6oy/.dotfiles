@@ -39,8 +39,6 @@ vim.opt.fillchars = {
   foldclose = "▸",
 } -- Disable virtual_text since it's redundant due to lsp_lines.
 
-
-
 vim.o.exrc = true
 
 -- Terminal
@@ -51,12 +49,14 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
+vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+
 -- DIAGNOSTICS ------------------------------------------------------------------------
 vim.diagnostic.config({
   float = { border = "rounded" },
   virtual_text = false,
-  signs = true,         -- иконки в левом канале
-  underline = true,     -- подчёркивание проблемных участков
+  signs = true, -- иконки в левом канале
+  underline = true, -- подчёркивание проблемных участков
 })
 
 -- Comments -----------------------------------------------------------------------------

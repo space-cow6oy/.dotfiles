@@ -16,6 +16,7 @@ return {
     },
     config = function()
       local lspconfig = require("lspconfig")
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
       vim.api.nvim_create_autocmd("LspAttach", {
         group = vim.api.nvim_create_augroup("UserLspConfig", {}),
@@ -29,6 +30,14 @@ return {
 
       lspconfig.lua_ls.setup({})
       lspconfig.ruby_lsp.setup({})
+      lspconfig.html.setup({})
+      lspconfig.cssls.setup({})
+      lspconfig.css_variables.setup({})
+      lspconfig.cssmodules_ls.setup({})
+      lspconfig.emmet_language_server.setup({
+        filetypes = { "html", "css", "eruby", "erb", "javascriptreact", "typescriptreact", "vue" },
+        capabilities = capabilities,
+      })
     end,
   },
 }

@@ -32,7 +32,8 @@ vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window s
 
 -- Terminal ------------------------------------------------------------------------------
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
-vim.keymap.set("t", "<C-c>", "<C-\\><C-n>")
+vim.keymap.set("t", "jj", "<C-\\><C-n>")
+-- vim.keymap.set("t", "<C-c>", "<C-\\><C-n>")
 
 -- LazyGit ------------------------------------------------------------------------------
 -- local job_id = 0

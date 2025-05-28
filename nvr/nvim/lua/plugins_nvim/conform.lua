@@ -12,8 +12,8 @@ return {
           javascriptreact = { "prettier", "prettierd" },
           css = { "prettier", "prettierd" },
           html = { "prettier", "prettierd" },
-          ruby = { "rubocop" },
-          -- erb = {" "}
+          ruby = { "rubyfmt" },
+          eruby = { "erb_format" },
         },
       })
       vim.api.nvim_create_autocmd("BufWritePre", {
