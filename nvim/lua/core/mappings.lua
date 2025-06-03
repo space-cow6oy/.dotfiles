@@ -32,7 +32,7 @@ vim.keymap.set("n", "_", [[<cmd>horizontal resize -2<cr>]]) -- make the window s
 
 -- Terminal ------------------------------------------------------------------------------
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
-vim.keymap.set("t", "jj", "<C-\\><C-n>")
+-- vim.keymap.set("t", "jj", "<C-\\><C-n>")
 -- vim.keymap.set("t", "<C-c>", "<C-\\><C-n>")
 
 -- LazyGit ------------------------------------------------------------------------------
@@ -57,7 +57,7 @@ vim.keymap.set(
 )
 
 -- OIL
-vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- load the session for the current directory
 vim.keymap.set("n", "<leader>qs", function()

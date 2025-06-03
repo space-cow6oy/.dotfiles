@@ -32,18 +32,9 @@ return {
         ["<Tab>"] = focus_preview,
       },
     }
-    -- local book = {
-    -- 	version = true,
-    -- 	wrap_results = true,
-    -- 	layout_strategy = "horizontal",
-    -- 	layout_config = {
-    -- 		horizontal = { width = 0.99, height = 0.9 },
-    -- 		preview_width = 92,
-    -- 	},
-    -- 	mappings = default_mappings,
-    -- }
 
     local desktop = {
+
       file_ignore_patterns = {
         "node_modules",
         "venv",
@@ -54,10 +45,10 @@ return {
       layout_config = {
         preview_height = 0.6,
         vertical = {
-          height = 0.99,
+          height = 0.999,
           preview_cutoff = 0,
-          prompt_position = "bottom",
-          width = 0.99,
+          prompt_position = "top",
+          width = 0.999,
         },
       },
       mappings = default_mappings,
@@ -67,80 +58,220 @@ return {
 
     -- NOTE: FIND --------------------------------------------------------------------
     local builtin = require("telescope.builtin")
-    -- local actions = require("telescope.actions")
+
     vim.keymap.set("n", "<leader>t", function()
-      builtin.find_files()
+      local opts = require("telescope.themes").get_ivy({
+
+        file_ignore_patterns = {
+          "node_modules",
+          "venv",
+          "%.webp",
+        },
+        wrap_results = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.6,
+          vertical = {
+            height = 0.999,
+            preview_cutoff = 0,
+            prompt_position = "top",
+            width = 0.999,
+          },
+        },
+        mappings = default_mappings,
+      })
+      builtin.find_files(opts)
     end, { desc = "Telescope find files" })
-    vim.keymap.set("n", "<leader>g", builtin.live_grep, { desc = "Telescope live grep" })
+    vim.keymap.set("n", "<leader>g", function()
+      local opts = require("telescope.themes").get_ivy({
+
+        file_ignore_patterns = {
+          "node_modules",
+          "venv",
+          "%.webp",
+        },
+        wrap_results = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.6,
+          vertical = {
+            height = 0.999,
+            preview_cutoff = 0,
+            prompt_position = "top",
+            width = 0.999,
+          },
+        },
+        mappings = default_mappings,
+      })
+      builtin.live_grep(opts)
+    end, { desc = "Telescope live grep" })
+
     vim.keymap.set("n", "<leader>b", function()
-      builtin.buffers({
+      local opts = require("telescope.themes").get_ivy({
+
+        file_ignore_patterns = {
+          "node_modules",
+          "venv",
+          "%.webp",
+        },
+        wrap_results = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.6,
+          vertical = {
+            height = 0.999,
+            preview_cutoff = 0,
+            prompt_position = "top",
+            width = 0.999,
+          },
+        },
+        mappings = default_mappings,
         sort_mru = true,
         sort_lastuesed = true,
         initial_mode = "normal",
       })
+      builtin.buffers({ opts })
     end, { desc = "Telescope buffers" })
-    -- vim.keymap.set(
-    -- 	"n",
-    -- 	"<leader>th",
-    -- 	builtin.help_tags,
-    -- 	{ desc = "Telescope help tags" }
-    -- )
     -- ------------- -----------------------------------------------------------------
     -- NOTE: LSP ---------------------------------------------------------------------
-    vim.keymap.set("n", "gf", builtin.lsp_references, { desc = "LSP references" })
-    vim.keymap.set("n", "gi", builtin.lsp_implementations, { desc = "LSP implementation" })
-    vim.keymap.set("n", "gd", function()
-      require("telescope.builtin").lsp_definitions({
-        jump_type = "never",
+    vim.keymap.set("n", "gf", function()
+      local opts = require("telescope.themes").get_ivy({
+
+        file_ignore_patterns = {
+          "node_modules",
+          "venv",
+          "%.webp",
+        },
+        wrap_results = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.6,
+          vertical = {
+            height = 0.999,
+            preview_cutoff = 0,
+            prompt_position = "top",
+            width = 0.999,
+          },
+        },
+        mappings = default_mappings,
+        sort_mru = true,
+        sort_lastuesed = true,
         initial_mode = "normal",
       })
+      builtin.lsp_references(opts)
+    end, { desc = "LSP references" })
+    vim.keymap.set("n", "gi", function()
+      local opts = require("telescope.themes").get_ivy({
+
+        file_ignore_patterns = {
+          "node_modules",
+          "venv",
+          "%.webp",
+        },
+        wrap_results = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.6,
+          vertical = {
+            height = 0.999,
+            preview_cutoff = 0,
+            prompt_position = "top",
+            width = 0.999,
+          },
+        },
+        mappings = default_mappings,
+        sort_mru = true,
+        sort_lastuesed = true,
+        initial_mode = "normal",
+      })
+      builtin.lsp_implementations(opts)
+    end, { desc = "LSP implementation" })
+    vim.keymap.set("n", "gd", function()
+      local opts = require("telescope.themes").get_ivy({
+
+        file_ignore_patterns = {
+          "node_modules",
+          "venv",
+          "%.webp",
+        },
+        wrap_results = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.6,
+          vertical = {
+            height = 0.999,
+            preview_cutoff = 0,
+            prompt_position = "top",
+            width = 0.999,
+          },
+        },
+        mappings = default_mappings,
+        sort_mru = true,
+        sort_lastuesed = true,
+        initial_mode = "normal",
+        jump_type = "never",
+      })
+      require("telescope.builtin").lsp_definitions({})
     end, { desc = "LSP definitions" })
-    -- vim.keymap.set(
-    -- 	"n",
-    -- 	"<leader>tp", builtin.lsp_type_definitions,
-    -- 	{ desc = "LSP type defenitions" }
-    -- )
     -- ------------- -----------------------------------------------------------------
     -- NOTE: Diagnostics -------------------------------------------------------------
     vim.keymap.set("n", "<leader>mm", function()
-      require("telescope.builtin").diagnostics({
+      local opts = require("telescope.themes").get_ivy({
+
+        file_ignore_patterns = {
+          "node_modules",
+          "venv",
+          "%.webp",
+        },
         wrap_results = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.6,
+          vertical = {
+            height = 0.999,
+            preview_cutoff = 0,
+            prompt_position = "top",
+            width = 0.999,
+          },
+        },
+        mappings = default_mappings,
+        sort_mru = true,
+        sort_lastuesed = true,
         root_dir = true,
         -- {root_dir}            (string|boolean)  if set to string, get
         --                                         diagnostics only for buffers
         --                                         under this dir otherwise cwd
-        line_width = "full",
-        layout_config = {
-          -- vertical = { width = 92, height = 50 },
-          preview_height = 0.6,
-        },
         initial_mode = "normal",
       })
+      require("telescope.builtin").diagnostics(opts)
     end, { desc = "Diagnostics" })
     vim.keymap.set("n", "<leader>mb", function()
-      require("telescope.builtin").diagnostics({
+      local opts = require("telescope.themes").get_ivy({
+
+        file_ignore_patterns = {
+          "node_modules",
+          "venv",
+          "%.webp",
+        },
+        wrap_results = true,
+        layout_strategy = "vertical",
+        layout_config = {
+          preview_height = 0.6,
+          vertical = {
+            height = 0.999,
+            preview_cutoff = 0,
+            prompt_position = "top",
+            width = 0.999,
+          },
+        },
+        mappings = default_mappings,
+        sort_mru = true,
+        sort_lastuesed = true,
+        initial_mode = "normal",
         bufnr = 0,
-        wrap_results = true,
-        line_width = "full",
-        layout_config = {
-          -- vertical = { width = 92, height = 50 },
-          preview_height = 0.6,
-        },
-        initial_mode = "normal",
       })
+      require("telescope.builtin").diagnostics(opts)
     end, { desc = "Diagnostics Buffer" })
-    vim.keymap.set("n", "<leader>mq", function()
-      require("telescope.builtin").quickfix({
-        bfnr = 0,
-        wrap_results = true,
-        line_width = "full",
-        layout_config = {
-          vertical = { width = 92, height = 50 },
-          preview_height = 0.6,
-        },
-        initial_mode = "normal",
-      })
-    end, { desc = "QuickFix" })
     -- ------------- -----------------------------------------------------------------
     -- NOTE: Defaults ----------------------------------------------------------------
     require("telescope").setup({
@@ -149,3 +280,28 @@ return {
     -- ------------- -----------------------------------------------------------------
   end,
 }
+
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>th",
+-- 	builtin.help_tags,
+-- 	{ desc = "Telescope help tags" }
+-- )
+-- vim.keymap.set(
+-- 	"n",
+-- 	"<leader>tp", builtin.lsp_type_definitions,
+-- 	{ desc = "LSP type defenitions" }
+-- )
+
+-- vim.keymap.set("n", "<leader>mq", function()
+--   require("telescope.builtin").quickfix({
+--     bfnr = 0,
+--     wrap_results = true,
+--     line_width = "full",
+--     layout_config = {
+--       vertical = { width = 92, height = 50 },
+--       preview_height = 0.6,
+--     },
+--     initial_mode = "normal",
+--   })
+-- end, { desc = "QuickFix" })
