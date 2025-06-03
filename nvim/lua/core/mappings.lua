@@ -56,8 +56,12 @@ vim.keymap.set(
   { noremap = true, silent = true }
 )
 
--- OIL
--- vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+-- MiniFiles
+vim.keymap.set("n", "<leader>-", ":lua MiniFiles.open()<CR>")
+
+vim.keymap.set("n", "-", function()
+  require("mini.files").open(vim.api.nvim_buf_get_name(0), true)
+end)
 
 -- load the session for the current directory
 vim.keymap.set("n", "<leader>qs", function()
