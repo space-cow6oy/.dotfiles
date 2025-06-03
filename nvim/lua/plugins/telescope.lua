@@ -108,7 +108,10 @@ return {
 
     vim.keymap.set("n", "<leader>b", function()
       local opts = require("telescope.themes").get_ivy({
-
+        mappings = default_mappings,
+        sort_mru = true,
+        sort_lastuesed = true,
+        initial_mode = "normal",
         file_ignore_patterns = {
           "node_modules",
           "venv",
@@ -125,12 +128,8 @@ return {
             width = 0.999,
           },
         },
-        mappings = default_mappings,
-        sort_mru = true,
-        sort_lastuesed = true,
-        initial_mode = "normal",
       })
-      builtin.buffers({ opts })
+      builtin.buffers(opts)
     end, { desc = "Telescope buffers" })
     -- ------------- -----------------------------------------------------------------
     -- NOTE: LSP ---------------------------------------------------------------------
