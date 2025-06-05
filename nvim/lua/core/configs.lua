@@ -23,7 +23,14 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 
 -- Ruler
-vim.api.nvim_set_option_value("colorcolumn", "120", {})
+vim.api.nvim_set_option_value("colorcolumn", "80", {})
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = "*.md",
+  callback = function()
+    vim.opt_local.textwidth = 80
+  end,
+})
 
 -- Highlight current line
 vim.opt.cursorline = true
@@ -49,7 +56,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
-vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+-- vim.opt.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
 
 -- DIAGNOSTICS ------------------------------------------------------------------------
 vim.diagnostic.config({

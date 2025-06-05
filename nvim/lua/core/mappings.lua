@@ -68,6 +68,11 @@ vim.keymap.set("n", "<leader>qs", function()
   require("persistence").load()
 end)
 
+-- render markdown toggle
+vim.keymap.set("n", "<leader>mt", function()
+  require("render-markdown").toggle()
+end)
+
 -- Кусок кода, который позволяет ливать из вима через rr и сразу переоткрывать вим
 -- #!~/bin/bash
 --
@@ -94,3 +99,16 @@ vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<C
 vim.keymap.set({ "n" }, "<Leader>k", function()
   vim.lsp.buf.signature_help({ border = "rounded" })
 end, { silent = true, noremap = true, desc = "toggle signature" })
+
+-- COPE PATH --
+function copy_relative_path()
+  local absolute_filepath = vim.fn.expand("%:p")
+
+  -- Копируем в системный clipboard
+  vim.fn.setreg("+", absolute_filepath)
+
+  print("Copied to clipboard:", absolute_filepath)
+end
+
+-- Маппинг кнопки
+vim.api.nvim_set_keymap("n", "<space>yp", "<cmd>lua copy_relative_path()<cr>", { noremap = true, silent = false })
