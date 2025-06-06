@@ -14,26 +14,45 @@ return {
         },
       },
     },
+
     config = function()
       local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      vim.api.nvim_create_autocmd("LspAttach", {
-        group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-        callback = function(ev)
-          vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+      -- vim.api.nvim_create_autocmd("LspAttach", {
+      --   group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+      --   callback = function(ev)
+      --     vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
+      --
+      --     vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename Symbol" })
+      --     vim.keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code Action" })
+      --     lspconfig.tailwindcss.setup({
+      --       filetypes = { "html" },
+      --     })
+      --   end,
+      -- })
 
-          vim.keymap.set("n", "gr", vim.lsp.buf.rename, { buffer = ev.buf, desc = "Rename Symbol" })
-          vim.keymap.set({ "n", "v" }, "ga", vim.lsp.buf.code_action, { buffer = ev.buf, desc = "Code Action" })
-        end,
-      })
-
+      lspconfig.tailwindcss.setup({})
       lspconfig.lua_ls.setup({})
-      lspconfig.ruby_lsp.setup({})
-      lspconfig.html.setup({})
+      lspconfig.html.setup({
+        filetypes = { "html", "css", "eruby", "erb", "javascriptreact", "typescriptreact", "vue" },
+        capabilities = capabilities,
+      })
       lspconfig.cssls.setup({})
-      lspconfig.css_variables.setup({})
-      lspconfig.cssmodules_ls.setup({})
+      -- lspconfig.tailwindcss.setup({
+      --   -- cmd = { "tailwindcss-language-server", "--stdio" },
+      --   -- init_options = {
+      --   --   userLanguages = {
+      --   --     eruby = "erb",
+      --   --   },
+      --   -- },
+      --   filetypes = { "html", "css", "eruby", "erb", "javascriptreact", "typescriptreact", "vue" },
+      --   -- settings = {
+      --   --   includeLanguages = { ["erb"] = "html" },
+      --   -- },
+      --   capabilities = capabilities,
+      -- })
+      lspconfig.ruby_lsp.setup({})
       lspconfig.emmet_language_server.setup({
         filetypes = { "html", "css", "eruby", "erb", "javascriptreact", "typescriptreact", "vue" },
         capabilities = capabilities,

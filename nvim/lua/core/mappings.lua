@@ -6,7 +6,7 @@ vim.keymap.set("n", "H", "^")
 vim.keymap.set("n", "L", "$")
 vim.keymap.set("n", "J", "<C-d>")
 vim.keymap.set("n", "K", "<C-u>")
-vim.keymap.set("n", "<leader>h", "K")
+vim.keymap.set("n", "<leader>H", "K")
 
 -- Insert --------------------------------------------------------------------------------
 vim.keymap.set("i", "jj", "<Esc>")
@@ -96,7 +96,7 @@ vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<C
 vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
 
 -- SIGNARUTRE -----------------------------------------------------------------------------
-vim.keymap.set({ "n" }, "<Leader>k", function()
+vim.keymap.set({ "n" }, "<leader>h", function()
   vim.lsp.buf.signature_help({ border = "rounded" })
 end, { silent = true, noremap = true, desc = "toggle signature" })
 
