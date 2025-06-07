@@ -1,0 +1,7 @@
+commands:
+  mappings:
+    main:
+      \:
+        command: git push-all
+        label: Push All Remotes (.config/lazygit/config.yml)
+        kind: execShellCommand
