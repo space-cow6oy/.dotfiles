@@ -8,7 +8,7 @@ return {
           ensure_installed = {
             "lus_ls",
             "ruby_lsp",
-            "tailwindcss",
+            -- "tailwindcss",
           },
         },
       })
@@ -18,7 +18,11 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ruby_lsp", "tailwindcss" },
+        ensure_installed = {
+          "lua_ls",
+          "ruby_lsp",
+          -- "tailwindcss"
+        },
       })
     end,
   },

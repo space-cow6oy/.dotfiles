@@ -8,9 +8,20 @@ return {
   -- { "hrsh7th/cmp-nvim-lsp-signature-help" },
   {
     "hrsh7th/nvim-cmp",
+
+    dependencies = {
+      "tailwind-tools",
+      "onsails/lspkind-nvim",
+      -- ...
+    },
     config = function()
       local cmp = require("cmp")
       cmp.setup({
+        formatting = {
+          format = require("lspkind").cmp_format({
+            before = require("tailwind-tools.cmp").lspkind_format,
+          }),
+        },
         snippet = {
           -- REQUIRED - you must specify a snippet engine
           expand = function(args)
