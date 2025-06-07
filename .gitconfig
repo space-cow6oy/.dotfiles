@@ -1,0 +1,5 @@
+[user]
+	name = Artem Voloshenko
+	email = artyomvoloshenko@gmail.com
+[alias]
+	push-all = "!git push origin-gitverse $(git symbolic-ref --short HEAD); git push origin $(git symbolic-ref --short HEAD)"
