@@ -1,7 +1,5 @@
-commands:
-  mappings:
-    main:
-      \:
-        command: git push-all
-        label: Push All Remotes (.config/lazygit/config.yml)
-        kind: execShellCommand
+customCommands:
+  - key: '\'
+    context: 'global'
+    command: "git push origin-gitverse $(git symbolic-ref --short HEAD); git push origin $(git symbolic-ref --short HEAD)"
+    output: terminal
