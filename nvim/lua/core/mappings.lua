@@ -12,6 +12,10 @@ vim.keymap.set("n", "<leader>H", "K")
 vim.keymap.set("i", "jj", "<Esc>")
 -- vim.keymap.set("n", "p", "a<C-S>v>")
 
+-- Base remaps
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<leader>q", ":q<CR>")
+
 -- Russian -------------------------------------------------------------------------------
 local cmd = vim.cmd
 cmd("set keymap=russian-jcukenwin")
@@ -64,7 +68,7 @@ vim.keymap.set("n", "-", function()
 end)
 
 -- load the session for the current directory
-vim.keymap.set("n", "<leader>qs", function()
+vim.keymap.set("n", "<leader>rs", function()
   require("persistence").load()
 end)
 
