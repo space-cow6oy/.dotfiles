@@ -1,0 +1,12 @@
+# ~/.ssh/config
+# GITHUB
+Host github.com
+   HostName github.com
+   PreferredAuthentications publickey
+   IdentityFile ~/.ssh/id_rsa_github_debian
+
+Host gitverse.ru
+  HostName gitverse.ru
+  PreferredAuthentications publickey
+  User git
+  IdentityFile ~/.ssh/id_ed25519_gitverse
