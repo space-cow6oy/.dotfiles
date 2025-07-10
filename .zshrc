@@ -35,10 +35,10 @@ alias cd="z"
 alias t='tmux'
 alias lg='lazygit'
 
+alias leet='XDG_CONFIG_HOME=~/.config/nvleet/ nvim leetcode.nvim'
 alias nv='XDG_CONFIG_HOME=~/.config/nvr/ nvim'
 alias nvp='XDG_CONFIG_HOME=~/.config/nvp/ nvim'
 alias snv='sudo nvim'
-alias nvleet='nvim leetcode.nvim'
 alias cddots='cd ~/.dotfiles'
 alias nvconf='cd ~/.dotfiles/nvim && nvim'
 alias cdp='cd ~/projects'

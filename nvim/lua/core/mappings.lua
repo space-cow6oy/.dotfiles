@@ -73,9 +73,10 @@ vim.keymap.set("n", "<leader>rs", function()
 end)
 
 -- render markdown toggle
-vim.keymap.set("n", "<leader>mt", function()
-  require("render-markdown").toggle()
-end)
+-- vim.keymap.set("n", "<leader>mt", function()
+--   require("render-markdown").toggle()
+-- end)
+vim.keymap.set("n", "<leader>mt", ":Markview Toggle<CR>")
 
 -- Кусок кода, который позволяет ливать из вима через rr и сразу переоткрывать вим
 -- #!~/bin/bash

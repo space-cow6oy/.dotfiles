@@ -1,7 +1,7 @@
 --Line Nnumbers
 vim.wo.number = true
 vim.wo.relativenumber = false
-
+vim.opt.iskeyword = { "@", "_", "-", "." }
 -- Endcoding
 vim.opt.encoding = "utf-8"
 vim.scriptencoding = "utf-8"
@@ -23,13 +23,13 @@ vim.opt.wrap = false
 vim.opt.termguicolors = true
 
 -- Ruler
-vim.api.nvim_set_option_value("colorcolumn", "120", {})
+vim.api.nvim_set_option_value("colorcolumn", "121", {})
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   pattern = "*.md",
   callback = function()
     vim.opt_local.textwidth = 80
-    vim.api.nvim_set_option_value("colorcolumn", "80", {})
+    vim.api.nvim_set_option_value("colorcolumn", "81", {})
   end,
 })
 
