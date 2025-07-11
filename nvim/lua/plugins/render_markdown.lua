@@ -1,133 +1,48 @@
--- For `plugins/markview.lua` users.
 return {
-  "OXY2DEV/markview.nvim",
-  lazy = false,
-
-  -- For `nvim-treesitter` users.
-  priority = 49,
-
-  -- For blink.cmp's completion
-  -- source
-  -- dependencies = {
-  --     "saghen/blink.cmp"
-  -- },
+  {
+    "MeanderingProgrammer/render-markdown.nvim",
+    -- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons", opt = true }, -- if you use standalone mini plugins
+    -- dependencies = {
+    --   "nvim-treesitter/nvim-treesitter",
+    --   "nvim-tree/nvim-web-devicons",
+    -- }, -- if you prefer nvim-web-devicons
+    ---@module 'render-markdown'
+    ---@type render.md.UserConfig
+    opts = {
+      heading = {
+        backgrounds = {
+          "RenderMarkdownH3Bg",
+          "RenderMarkdownH2Bg",
+          "RenderMarkdownH1Bg",
+          "RenderMarkdownH1Bg",
+          "RenderMarkdownH5Bg",
+          "RenderMarkdownH6Bg",
+        },
+        foregrounds = {
+          "RenderMarkdownH1",
+          "DiagnosticError",
+          "DiagnosticError",
+          "DiagnosticError",
+          "RenderMarkdownH5",
+          "RenderMarkdownH6",
+        },
+        icons = { "" },
+        sign = false,
+        border = true,
+        border_virtual = true,
+        position = "inline",
+        width = "full",
+        -- left_margin = 0.5,
+        -- left_pad = 0.5,
+        -- right_pad = 0.5,
+      },
+      code = {
+        sign = false,
+        width = "block",
+        min_width = 45,
+        right_pad = 2,
+      },
+    },
+  },
 }
-
--- return {
---   {
---     "MeanderingProgrammer/render-markdown.nvim",
---     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
---     -- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" }, -- if you use standalone mini plugins
---     dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" }, -- if you prefer nvim-web-devicons
---     ---@module 'render-markdown'
---     ---@type render.md.UserConfig
---     opts = {},
---   },
--- }
---   {
---     "MeanderingProgrammer/render-markdown.nvim",
---     -- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
---     dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons", opt = true }, -- if you use standalone mini plugins
---     -- dependencies = {
---     --   "nvim-treesitter/nvim-treesitter",
---     --   "nvim-tree/nvim-web-devicons",
---     -- }, -- if you prefer nvim-web-devicons
---     ---@module 'render-markdown'
---     ---@type render.md.UserConfig
---     opts = {
---       heading = {
---         backgrounds = {
---           "RenderMarkdownH3Bg",
---           "RenderMarkdownH2Bg",
---           "RenderMarkdownH1Bg",
---           "RenderMarkdownH1Bg",
---           "RenderMarkdownH5Bg",
---           "RenderMarkdownH6Bg",
---         },
---         foregrounds = {
---           "RenderMarkdownH1",
---           "DiagnosticError",
---           "DiagnosticError",
---           "DiagnosticError",
---           "RenderMarkdownH5",
---           "RenderMarkdownH6",
---         },
---         icons = { "" },
---         sign = false,
---         border = true,
---         border_virtual = true,
---         position = "inline",
---         width = "full",
---         -- left_margin = 0.5,
---         -- left_pad = 0.5,
---         -- right_pad = 0.5,
---       },
---       code = {
---         sign = false,
---         width = "block",
---         -- min_width = 45,
---         -- right_pad = 2,
---       },
---       pipe_table = {
---         enabled = true,
---         -- render_modes = false,
---         -- preset = "none",
---         -- style = "full",
---         cell = "padded",
---         -- padding = 1,
---         -- min_width = 0,
---         border = {
---           "┌",
---           "┬",
---           "┐",
---           "├",
---           "┼",
---           "┤",
---           "└",
---           "┴",
---           "┘",
---           "│",
---           "─",
---         },
---         border_virtual = true,
---         alignment_indicator = "━",
---         head = "RenderMarkdownTableHead",
---         row = "RenderMarkdownTableRow",
---         filler = "RenderMarkdownTableFill",
---       },
---       link = {
---         enabled = true,
---         render_modes = false,
---         -- footnote = {
---         --   enabled = true,
---         --   superscript = true,
---         --   prefix = "",
---         --   suffix = "",
---         -- },
---         -- image = "󰥶 ",
---         -- email = "󰀓 ",
---         -- hyperlink = "󰌹 ",
---         -- highlight = "RenderMarkdownLink",
---         -- wiki = {
---         --   icon = "󱗖 ",
---         --   body = function()
---         --     return nil
---         --   end,
---         --   highlight = "RenderMarkdownWikiLink",
---         -- },
---         -- custom = {
---         --   web = { pattern = "^http", icon = "󰖟 " },
---         --   discord = { pattern = "discord%.com", icon = "󰙯 " },
---         --   github = { pattern = "github%.com", icon = "󰊤 " },
---         --   gitlab = { pattern = "gitlab%.com", icon = "󰮠 " },
---         --   google = { pattern = "google%.com", icon = "󰊭 " },
---         --   neovim = { pattern = "neovim%.io", icon = " " },
---         --   reddit = { pattern = "reddit%.com", icon = "󰑍 " },
---         --   stackoverflow = { pattern = "stackoverflow%.com", icon = "󰓌 " },
---         --   wikipedia = { pattern = "wikipedia%.org", icon = "󰖬 " },
---         --   youtube = { pattern = "youtube%.com", icon = "󰗃 " },
---         -- },
---       },
---     },
---   },
--- }

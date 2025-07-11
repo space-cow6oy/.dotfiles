@@ -2,8 +2,8 @@
 vim.g.mapleader = " "
 --
 -- Jumping --------------------------------------------------------------------------------
-vim.keymap.set("n", "H", "^")
-vim.keymap.set("n", "L", "$")
+vim.keymap.set({ "n", "v" }, "H", "^")
+vim.keymap.set({ "n", "v" }, "L", "$")
 vim.keymap.set("n", "J", "<C-d>")
 vim.keymap.set("n", "K", "<C-u>")
 vim.keymap.set("n", "<leader>H", "K")
@@ -73,10 +73,10 @@ vim.keymap.set("n", "<leader>rs", function()
 end)
 
 -- render markdown toggle
--- vim.keymap.set("n", "<leader>mt", function()
---   require("render-markdown").toggle()
--- end)
-vim.keymap.set("n", "<leader>mt", ":Markview Toggle<CR>")
+vim.keymap.set("n", "<leader>mt", function()
+  require("render-markdown").toggle()
+end)
+-- vim.keymap.set("n", "<leader>mt", ":Markview Toggle<CR>")
 
 -- Кусок кода, который позволяет ливать из вима через rr и сразу переоткрывать вим
 -- #!~/bin/bash
