@@ -22,7 +22,7 @@ cmd("set keymap=russian-jcukenwin")
 cmd("set iminsert=0")
 cmd("set imsearch=0")
 cmd("highlight lCursor guifg=NONE guibg=Cyan")
-vim.keymap.set("i", "ll", "<C-^>")
+vim.keymap.set("i", "kk", "<C-^>")
 
 -- Errors -----------------------------------------------------------------------------
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Error float" })

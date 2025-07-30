@@ -1,0 +1,133 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "command": "runCommands",
+    "key": "alt+e", // whatever keybinding
+    "when": "editorTextFocus",
+    "args": {
+      "commands": ["workbench.files.action.focusFilesExplorer"]
+    }
+  },
+  {
+    "command": "runCommands",
+    "key": "alt+e", // whatever keybinding
+    "when": "sideBarFocus",
+    "args": {
+      "commands": ["workbench.action.closeSidebar"]
+    }
+  },
+  // {
+  //   "key": "j",
+  //   "command": "list.focusDown",
+  //   "when": "sideBarFocus"
+  // },
+  // {
+  //   "key": "k",
+  //   "command": "list.focusUp",
+  //   "when": "sideBarFocus"
+  // },
+  // {
+  //   "key": "l",
+  //   "command": "list.expand",
+  //   "when": "sideBarFocus"
+  // },
+  // {
+  //   "key": "h",
+  //   "command": "list.collapse",
+  //   "when": "sideBarFocus"
+  // },
+  {
+    "key": "j",
+    "command": "list.focusDown",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "k",
+    "command": "list.focusUp",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "l",
+    "command": "list.expand",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "h",
+    "command": "list.collapse",
+    "when": "explorerViewletFocus"
+  },
+  //  {
+  //   "key": "l",
+  //   "command": "explorer.openAndPassFocus",
+  //   "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus"
+  // },
+  {
+    "command": "runCommands",
+    "key": "l", // whatever keybinding
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus",
+    "args": {
+      "commands": ["explorer.openAndPassFocus", "workbench.action.closeSidebar"]
+    }
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+
+  {
+    "key": "alt+j",
+    "command": "togglePeekWidgetFocus",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "command": "renameFile",
+    "key": "r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "dd",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "alt+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus || suggestWidgetVisible && textInputFocus && !suggestWidgetHasFocusedSuggestion"
+  },
+  {
+    "key": "alt+l",
+    "command": "acceptSelectedSuggestion",
+    "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "hideSuggestWidget",
+    "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "alt+K",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "alt+H",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  }
+]

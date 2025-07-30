@@ -9,7 +9,7 @@ return {
 
       -- optional
       "nvim-treesitter/nvim-treesitter",
-      "rcarriga/nvim-notify",
+      -- "rcarriga/nvim-notify",
       "nvim-tree/nvim-web-devicons",
     },
     -- configuration goes here
@@ -18,7 +18,7 @@ return {
       arg = "leetcode.nvim",
 
       ---@type lc.lang
-      lang = "ruby",
+      lang = "python3",
 
       cn = { -- leetcode.cn
         enabled = false, ---@type boolean

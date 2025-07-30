@@ -1,0 +1,112 @@
+{
+  "workbench.startupEditor": "none",
+  "extensions.ignoreRecommendations": true,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+
+  // MY EDITOR CONFIGS
+  "workbench.activityBar.location": "hidden",
+  "window.zoomLevel": 4,
+  "editor.fontSize": 11,
+  "breadcrumbs.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "workbench.sideBar.location": "left",
+  "editor.minimap.enabled": false,
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.showTabs": "none",
+  "editor.rulers": [80, 120],
+  // "workbench.editor.enablePreview": false,
+  // "workbench.editor.revealIfOpen": false,
+  "window.density.editorTabHeight": "compact",
+  "workbench.layoutControl.enabled": false,
+  "workbench.colorTheme": "Rose Prime",
+  "editor.fontLigatures": true,
+  "zenMode.centerLayout": false,
+  "zenMode.hideLineNumbers": false,
+  "zenMode.showTabs": "none",
+  "zenMode.hideStatusBar": false,
+
+  "diffEditor.ignoreTrimWhitespace": true,
+  "editor.inlineSuggest.edits.showCollapsed": true,
+  "window.commandCenter": false,
+  "editor.stickyScroll.enabled": false,
+  "workbench.editor.editorActionsLocation": "hidden",
+  "editor.fontFamily": "'JetBrains Mono', 'monospace', monospace",
+  // VIM
+  "vim.leader": "<Space>",
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(250, 240, 170, 0.5)",
+  "vim.highlightedyank.textColor": "white",
+  "vim.visualModeKeyBindings": [
+    { "before": ["leader", "k"], "commands": [":bprevious"] },
+    { "before": ["leader", "j"], "commands": [":bnext"] }
+  ],
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["leader", "w"], "commands": [":w!"] },
+    { "before": ["leader", "q"], "commands": [":q!"] },
+    { "before": ["leader", "q"], "commands": [":q!"] },
+    { "before": ["J"], "after": ["<c-d>"] },
+    { "before": ["K"], "after": ["<c-u>"] },
+    { "before": ["H"], "after": ["^"] },
+    { "before": ["L"], "after": ["$"] }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [" ", ":"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": [" ", "b"],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+    },
+    {
+      "before": [" ", "t"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": [" ", "h"],
+      "commands": ["editor.action.showDefinitionPreviewHover"],
+      "recursive": true
+    },
+    {
+      "before": ["-"],
+      "commands": [
+        {
+          "command": "oil-code.open"
+        }
+      ]
+    },
+    {
+      "before": ["<cr>"],
+      "commands": [
+        {
+          "command": "oil-code.select"
+        }
+      ]
+    },
+    {
+      "before": ["<c-l>"],
+      "commands": [
+        {
+          "command": "oil-code.refresh"
+        }
+      ]
+    },
+    {
+      "before": ["`"],
+      "commands": [
+        {
+          "command": "oil-code.cd"
+        }
+      ]
+    }
+  ],
+
+  "vim.insertModeKeyBindings": [{ "before": ["j", "j"], "after": ["<Esc>"] }],
+  "window.menuBarVisibility": "compact"
+}

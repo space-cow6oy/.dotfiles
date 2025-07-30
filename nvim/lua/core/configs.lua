@@ -33,6 +33,9 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   end,
 })
 
+-- Markdown teruns off _ Highlight
+-- :syn clear markdownError
+
 -- Highlight current line
 vim.opt.cursorline = true
 -- Fillchars
