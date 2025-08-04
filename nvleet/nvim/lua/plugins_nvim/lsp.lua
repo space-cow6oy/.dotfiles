@@ -30,6 +30,7 @@ return {
       lspconfig.marksman.setup({})
       lspconfig.pyright.setup({})
       lspconfig.ruby_lsp.setup({})
+      lspconfig.gopls.setup({})
     end,
   },
 }

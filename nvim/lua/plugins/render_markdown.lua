@@ -38,7 +38,7 @@ return {
         -- right_pad = 0.5,
       },
       code = {
-        sign = false,
+        sign = true,
         width = "block",
         min_width = 45,
         right_pad = 2,
