@@ -4,12 +4,13 @@ vim.g.mapleader = " "
 -- Jumping --------------------------------------------------------------------------------
 vim.keymap.set({ "n", "v" }, "H", "^")
 vim.keymap.set({ "n", "v" }, "L", "$")
-vim.keymap.set("n", "J", "<C-d>")
-vim.keymap.set("n", "K", "<C-u>")
+vim.keymap.set({ "n", "v" }, "J", "<C-d>")
+vim.keymap.set({ "n", "v" }, "K", "<C-u>")
 vim.keymap.set("n", "<leader>H", "K")
 
 -- Insert --------------------------------------------------------------------------------
 vim.keymap.set("i", "jj", "<Esc>")
+vim.keymap.set("i", "dd", "<BS>")
 -- vim.keymap.set("n", "p", "a<C-S>v>")
 
 -- Base remaps
