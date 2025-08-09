@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   callback = function()
     vim.opt_local.textwidth = 80
     vim.api.nvim_set_option_value("colorcolumn", "81", {})
+    vim.cmd("syn clear markdownError")
   end,
 })
 

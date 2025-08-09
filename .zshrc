@@ -28,6 +28,9 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+alias r="ranger"
+alias c="clear"
+
 alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
