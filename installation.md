@@ -70,7 +70,7 @@ wmctrl -s 0
 wmctrl -s 1
 ...
 
-debian settings -> keyboard shortcuts -> super+h->super+z
+debian settings -> keyboard shortcuts -> super+h -> super+z
 
 # Kitty
 sudo apt install kitty
@@ -82,7 +82,6 @@ ln -s ~/.dotfiles/kitty ~/.config/kitty/
 если тем нет, то git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.dotfiles/kitty/kitty-themes
 cd ~/.dotfiles/kitty
 ln -s ./kitty-themes/themes/gruvbox_dark.conf ~/.dotfiles/kitty/theme.conf
-
 
 
 
@@ -112,7 +111,7 @@ sudo apt install imagemagick
 
 
 # tmux
-
-
+sudo apt install tmux
+ln -s ~/.dotfiles/.tmux.conf ~/ 
 
 
