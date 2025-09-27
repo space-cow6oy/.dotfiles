@@ -6,7 +6,7 @@ git clone .dotfiles (only through ssh!!!)
 cp ~/.dotfiles/config ~/.ssh/ (copy because ssh keys names are different for different machines)
 change path to public keys in ~/.ssh/config 
 ln -s ~/.dotfiles/.gitconfig ~/
-git remote add origin-gitverse https://gitverse.ru/dam.hay/.dotfiles
+git remote set-url origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git  
 
 
 # font
@@ -103,6 +103,12 @@ download tarball (tar.gz) from neovim releases github
 extract to /programs
 sudo ln -s ~/programs/nvim-linux-x86_64/bin/nvim /bin/
 
+ln -s ~/.dotfiles/nvim ~/.config 
+
+sudo apt update
+sudo apt install build-essential
+sudo apt install wl-clipboard
+sudo apt install imagemagick
 
 
 # tmux

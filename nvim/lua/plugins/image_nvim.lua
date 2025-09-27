@@ -1,8 +1,11 @@
 return {
   {
     "3rd/image.nvim",
+		build = false,
     config = function()
       require("image").setup({
+		build = false,
+		processor="magick_cli",
         backend = "kitty", -- ueberzug
         kitty_method = "normal",
         integrations = {
@@ -73,3 +76,14 @@ return {
     end,
   },
 }
+-- return {
+--   "folke/snacks.nvim",
+--   ---@type snacks.Config
+--   opts = {
+--     image = {
+--       -- your image configuration comes here
+--       -- or leave it empty to use the default settings
+--       -- refer to the configuration section below
+--     }
+--   }
+-- }
