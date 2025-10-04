@@ -120,4 +120,4 @@ function copy_relative_path()
 end
 
 -- Маппинг кнопки
-vim.api.nvim_set_keymap("n", "<space>yp", "<cmd>lua copy_relative_path()<cr>", { noremap = true, silent = false })
+vim.api.nvim_set_keymap("n", "<space>yp", "<cmd>lua copy_relative_path()<cr><cr>", { noremap = true, silent = false })
