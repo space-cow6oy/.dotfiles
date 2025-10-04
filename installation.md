@@ -114,4 +114,7 @@ sudo apt install imagemagick
 sudo apt install tmux
 ln -s ~/.dotfiles/.tmux.conf ~/ 
 
+git clone https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
+
+перезагрузить комп
 

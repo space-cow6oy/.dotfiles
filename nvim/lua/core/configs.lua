@@ -25,12 +25,23 @@ vim.opt.termguicolors = true
 -- Ruler
 vim.api.nvim_set_option_value("colorcolumn", "121", {})
 
+vim.api.nvim_del_augroup_by_id(vim.api.nvim_create_augroup("MarkdownHighlightGroup", {}))
+
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
-  pattern = { "*.md", "*.py" },
+  pattern = { "*.md", },
   callback = function()
     vim.opt_local.textwidth = 80
     vim.api.nvim_set_option_value("colorcolumn", "81", {})
     vim.cmd("syn clear markdownError")
+  end,
+})
+
+
+vim.api.nvim_create_autocmd({ "BufEnter" }, {
+  pattern = { "*.py" },
+  callback = function()
+    vim.opt_local.textwidth = 80
+    vim.api.nvim_set_option_value("colorcolumn", "81", {})
   end,
 })
 
