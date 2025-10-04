@@ -1,6 +1,6 @@
 -- Leader --------------------------------------------------------------------------------
 vim.g.mapleader = " "
---
+
 -- Jumping --------------------------------------------------------------------------------
 vim.keymap.set({ "n", "v" }, "H", "^")
 vim.keymap.set({ "n", "v" }, "L", "$")
@@ -24,6 +24,9 @@ cmd("set iminsert=0")
 cmd("set imsearch=0")
 cmd("highlight lCursor guifg=NONE guibg=Cyan")
 vim.keymap.set("i", "kk", "<C-^>")
+
+-- Clear cmd
+vim.keymap.set("n", "<leader>c", "<c-l>")
 
 -- Errors -----------------------------------------------------------------------------
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Error float" })

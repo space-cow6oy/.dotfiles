@@ -1,6 +1,7 @@
 return {
   {
     "nvim-lualine/lualine.nvim",
+	enabled=false,
     -- dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       local custom_fname = require("lualine.components.filename"):extend()
@@ -37,7 +38,7 @@ return {
 
         options = {
           globalstatus = true,
-          theme = require("/my/line_theme").theme(),
+          theme = 	require("/my/line_theme").theme(),
           component_separators = { left = "", right = "" },
           section_separators = { left = "", right = "" },
         },
@@ -52,9 +53,9 @@ return {
             {
               "diagnostics",
             },
+            "diff",
           },
           lualine_c = {
-            "diff",
           },
           lualine_x = {},
           lualine_y = {

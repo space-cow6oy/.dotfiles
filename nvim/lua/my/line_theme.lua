@@ -1,11 +1,12 @@
 local M = {}
 M.theme = function()
   local colors = {
-    darkgray = "#b8bb26",
-    gray = "#f2e5bc",
-    innerbg = "#1d2021",
-    outerbg = "#32302f",
-    normal = "#32302f",
+    green = "#b8bb26",
+	none = '',
+    white = "#f2e5bc",
+    innerbg = "#32302f",
+    outerbg = "",
+    normal = "",
     insert = "#32302f",
     visual = "#32302f",
     replace = "#32302f",
@@ -13,34 +14,34 @@ M.theme = function()
   }
   return {
     inactive = {
-      a = { fg = colors.gray, bg = colors.outerbg, gui = "bold" },
-      b = { fg = colors.gray, bg = colors.outerbg },
-      c = { fg = colors.gray, bg = colors.innerbg },
+      a = { fg = colors.green, bg = colors.normal, gui = "bold" },
+      b = { fg = colors.white, bg = colors.outerbg, gui="bold" },
+      c = { fg = colors.white, bg = colors.none , gui="bold"},
     },
     visual = {
-      a = { fg = colors.darkgray, bg = colors.visual, gui = "bold" },
-      b = { fg = colors.gray, bg = colors.outerbg },
-      c = { fg = colors.gray, bg = colors.innerbg },
+      a = { fg = colors.green, bg = colors.normal, gui = "bold" },
+      b = { fg = colors.white, bg = colors.outerbg, gui="bold" },
+      c = { fg = colors.white, bg = colors.none , gui="bold"},
     },
     replace = {
-      a = { fg = colors.darkgray, bg = colors.replace, gui = "bold" },
-      b = { fg = colors.gray, bg = colors.outerbg },
-      c = { fg = colors.gray, bg = colors.innerbg },
+      a = { fg = colors.green, bg = colors.normal, gui = "bold" },
+      b = { fg = colors.white, bg = colors.outerbg, gui="bold" },
+      c = { fg = colors.white, bg = colors.none , gui="bold"},
     },
     normal = {
-      a = { fg = colors.darkgray, bg = colors.normal, gui = "bold" },
-      b = { fg = colors.gray, bg = colors.outerbg },
-      c = { fg = colors.gray, bg = colors.innerbg },
+      a = { fg = colors.green, bg = colors.normal, gui = "bold" },
+      b = { fg = colors.white, bg = colors.outerbg, gui="bold" },
+      c = { fg = colors.white, bg = colors.none , gui="bold"},
     },
     insert = {
-      a = { fg = colors.darkgray, bg = colors.insert, gui = "bold" },
-      b = { fg = colors.gray, bg = colors.outerbg },
-      c = { fg = colors.gray, bg = colors.innerbg },
+      a = { fg = colors.green, bg = colors.normal, gui = "bold" },
+      b = { fg = colors.white, bg = colors.outerbg, gui="bold" },
+      c = { fg = colors.white, bg = colors.none , gui="bold"},
     },
     command = {
-      a = { fg = colors.darkgray, bg = colors.command, gui = "bold" },
-      b = { fg = colors.gray, bg = colors.outerbg },
-      c = { fg = colors.gray, bg = colors.innerbg },
+      a = { fg = colors.green, bg = colors.normal, gui = "bold" },
+      b = { fg = colors.white, bg = colors.outerbg, gui="bold" },
+      c = { fg = colors.white, bg = colors.none , gui="bold"},
     },
   }
 end

@@ -11,6 +11,10 @@ require("core_nvim.configs")
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
+-- Transparent StatusLine
+vim.cmd("hi StatusLine guibg=NONE")
+
+
 local accesskey = require("my.accesskey")
 local get_new_access_key = accesskey.get_new_access_key
 

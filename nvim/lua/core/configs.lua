@@ -9,6 +9,13 @@ vim.scriptencoding = "utf-8"
 vim.opt.mouse = "a"
 vim.opt.mousefocus = true
 
+-- Hide statusbar
+vim.opt.laststatus = 0
+-- Hide cmd line
+vim.opt.ruler = false
+vim.opt.showcmd = false
+vim.opt.cmdheight=0
+
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"
 
@@ -26,6 +33,7 @@ vim.opt.termguicolors = true
 vim.api.nvim_set_option_value("colorcolumn", "121", {})
 
 vim.api.nvim_del_augroup_by_id(vim.api.nvim_create_augroup("MarkdownHighlightGroup", {}))
+
 
 vim.api.nvim_create_autocmd({ "BufEnter" }, {
   pattern = { "*.md", },
