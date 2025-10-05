@@ -118,3 +118,8 @@ git clone https://github.com/tmux-plugins/tpm.git ~/.tmux/plugins/tpm
 
 перезагрузить комп
 
+
+# mpv
+sudo apt install mpv
+
+ln -s ~/.dotfiles/mpv.conf ~/.config/mpv/
