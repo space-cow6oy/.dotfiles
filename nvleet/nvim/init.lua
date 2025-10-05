@@ -1,1 +1,1 @@
-/home/artem/.dotfiles/nvim/init.lua
+/home/artom/.dotfiles/nvim/init.lua

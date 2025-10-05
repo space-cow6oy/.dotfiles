@@ -9,7 +9,7 @@ return {
             "lus_ls",
             "pyright",
             "ruff",
-            "rubyfmt",
+            -- "rubyfmt",
           },
         },
       })
@@ -19,7 +19,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "pyright", "ruby_lsp" },
+        ensure_installed = { "lua_ls", "pyright" },-- , "ruby_lsp"
       })
     end,
   },
