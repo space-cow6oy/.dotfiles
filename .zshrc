@@ -38,14 +38,17 @@ alias cd="z"
 alias t='tmux'
 alias lg='lazygit'
 
-alias leet='XDG_CONFIG_HOME=~/.config/nvleet/ nvim leetcode.nvim'
-alias nvleet='XDG_CONFIG_HOME=~/.config/nvleet/ nvim'
-alias nv='nvim'
-alias nvr='XDG_CONFIG_HOME=~/.config/nvr/ nvim'
-alias nvp='XDG_CONFIG_HOME=~/.config/nvp/ nvim'
-alias snv='sudo nvim'
-alias cddots='cd ~/.dotfiles'
-alias nvconf='cd ~/.dotfiles/nvim && nvim'
+# alias leet='XDG_CONFIG_HOME=~/.config/nvleet/ nvim leetcode.nvim'
+# alias nvleet='XDG_CONFIG_HOME=~/.config/nvleet/ nvim'
+alias nvim='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
+alias nv='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
+# alias nv='nvim'
+
+# alias nvr='XDG_CONFIG_HOME=~/.config/nvr/ nvim'
+# alias nvp='XDG_CONFIG_HOME=~/.config/nvp/ nvim'
+# alias snv='sudo nvim'
+# alias cddots='cd ~/.dotfiles'
+# alias nvconf='cd ~/.dotfiles/nvim && nvim'
 alias as='cd ~/ASAP'
 
 

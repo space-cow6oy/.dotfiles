@@ -1,0 +1,3 @@
+print("asd")
+
+a = 'asd'
