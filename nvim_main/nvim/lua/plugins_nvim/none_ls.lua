@@ -7,8 +7,17 @@ return {
     -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTIN_CONFIG.md
     null_ls.setup({
       sources = {
+
+        null_ls.builtins.diagnostics.mypy,
+        null_ls.builtins.diagnostics.pylint,
+        null_ls.builtins.diagnostics.stylelint,
         null_ls.builtins.diagnostics.djlint.with({
+
           filetypes = { "html", "django", "jinja.html", "htmldjango" },
+          diagnostics_postprocess = function(diagnostic)
+            -- Force the severity to be ERROR
+            diagnostic.severity = vim.diagnostic.severity["ERROR"]
+          end,
         }),
       },
     })

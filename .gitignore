@@ -7,3 +7,5 @@ nvr/chromium
 nvleet/chromium
 nvleet/go
 nvr/go
+nvim_main/nvim/node_modules
+nvim_main/nvim/ruff_cache
