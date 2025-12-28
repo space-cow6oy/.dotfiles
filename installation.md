@@ -5,7 +5,7 @@ ssh-keygen -t ed25519 -C "artyomvoloshenko@gmail.com" (for github and gitverse -
 git clone .dotfiles (only through ssh!!!)
 cp ~/.dotfiles/config ~/.ssh/ (copy because ssh keys names are different for different machines)
 change path to public keys in ~/.ssh/config 
-ln -s ~/.dotfiles/.gitconfig ~/
+ln -s ~/.dotfiles/.gitconfig ~/ 
 cd ~/.dotfiles
 git remote add origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git 
 

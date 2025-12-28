@@ -7,6 +7,9 @@ return {
         opts = {
           ensure_installed = {
             "lus_ls",
+            "ruff",
+            "marksman",
+            "djlsp",
           },
         },
       })
@@ -16,7 +19,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls" },
+        ensure_installed = { "lua_ls", "ty", "marksman" },
       })
     end,
   },

@@ -8,7 +8,7 @@ require("my.messages")
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
-vim.lsp.enable({ "lua_ls", "ty" })
+vim.lsp.enable({ "lua_ls", "ty", "marksman", "djlsp", "ruff", "cssls", "html", "emmet_language_server" })
 
 -- local accesskey = require("my.accesskey")
 -- local get_new_access_key = accesskey.get_new_access_key

@@ -6,12 +6,10 @@ return {
       require("conform").setup({
         formatters_by_ft = {
           lua = { "stylua" },
-          jsx = { "prettier", "prettierd" },
-          json = { "prettier", "prettierd" },
-          javascript = { "prettier", "prettierd" },
-          javascriptreact = { "prettier", "prettierd" },
-          css = { "prettier", "prettierd" },
-          html = { "prettier", "prettierd" },
+          python = { "ruff_format" },
+          json = { "prettierd" },
+          css = { "prettierd" },
+          html = { "djlint" },
         },
       })
       vim.api.nvim_create_autocmd("BufWritePre", {
