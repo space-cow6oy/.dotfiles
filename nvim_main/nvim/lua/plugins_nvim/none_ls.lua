@@ -8,7 +8,7 @@ return {
     null_ls.setup({
       sources = {
 
-        null_ls.builtins.diagnostics.mypy,
+        -- null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.stylelint,
         null_ls.builtins.diagnostics.djlint.with({

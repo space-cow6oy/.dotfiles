@@ -43,7 +43,7 @@ return {
       wrap_results = true,
       layout_strategy = "vertical",
       layout_config = {
-        preview_height = 0.6,
+        preview_height = 0.35,
         vertical = {
           height = 0.999,
           preview_cutoff = 0,
@@ -70,7 +70,7 @@ return {
         wrap_results = true,
         layout_strategy = "vertical",
         layout_config = {
-          preview_height = 0.6,
+          preview_height = 0.35,
           vertical = {
             height = 0.999,
             preview_cutoff = 0,
@@ -93,7 +93,7 @@ return {
         wrap_results = true,
         layout_strategy = "vertical",
         layout_config = {
-          preview_height = 0.6,
+          preview_height = 0.35,
           vertical = {
             height = 0.999,
             preview_cutoff = 0,
@@ -120,7 +120,7 @@ return {
         wrap_results = true,
         layout_strategy = "vertical",
         layout_config = {
-          preview_height = 0.6,
+          preview_height = 0.35,
           vertical = {
             height = 0.999,
             preview_cutoff = 0,
@@ -144,7 +144,7 @@ return {
         wrap_results = true,
         layout_strategy = "vertical",
         layout_config = {
-          preview_height = 0.6,
+          preview_height = 0.35,
           vertical = {
             height = 0.999,
             preview_cutoff = 0,
@@ -170,7 +170,7 @@ return {
         wrap_results = true,
         layout_strategy = "vertical",
         layout_config = {
-          preview_height = 0.6,
+          preview_height = 0.35,
           vertical = {
             height = 0.999,
             preview_cutoff = 0,
@@ -196,7 +196,7 @@ return {
         wrap_results = true,
         layout_strategy = "vertical",
         layout_config = {
-          preview_height = 0.6,
+          preview_height = 0.35,
           vertical = {
             height = 0.999,
             preview_cutoff = 0,
@@ -225,7 +225,7 @@ return {
         wrap_results = true,
         layout_strategy = "vertical",
         layout_config = {
-          preview_height = 0.6,
+          preview_height = 0.35,
           vertical = {
             height = 0.999,
             preview_cutoff = 0,
@@ -255,7 +255,7 @@ return {
         wrap_results = true,
         layout_strategy = "vertical",
         layout_config = {
-          preview_height = 0.6,
+          preview_height = 0.35,
           vertical = {
             height = 0.999,
             preview_cutoff = 0,
