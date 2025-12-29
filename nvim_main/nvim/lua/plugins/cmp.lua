@@ -16,6 +16,13 @@ return {
     },
     config = function()
       local cmp = require("cmp")
+
+      cmp.setup.filetype({ "sql" }, {
+        sources = {
+          { name = "vim-dadbod-completion" },
+          { name = "buffer" },
+        },
+      })
       cmp.setup({
         formatting = {
           format = require("lspkind").cmp_format({
@@ -75,7 +82,7 @@ return {
           { name = "render-markdown" },
         }),
       })
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
       -- vim.lsp.config("lua_ls", {
       --   capabilities = capabilities,
