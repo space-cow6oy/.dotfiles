@@ -121,3 +121,7 @@ end
 
 -- Маппинг кнопки
 vim.api.nvim_set_keymap("n", "<space>yp", "<cmd>lua copy_relative_path()<cr><cr>", { noremap = true, silent = false })
+
+-- DADBOD
+vim.keymap.set("n", "<leader>s", "{jV}k<plug>(DBUI_ExecuteQuery))")
+vim.keymap.set("n", "<leader>db", "<cmd>DBUI<CR>")
