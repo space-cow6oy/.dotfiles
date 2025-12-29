@@ -8,6 +8,10 @@ return {
     null_ls.setup({
       sources = {
 
+        null_ls.builtins.diagnostics.pydoclint.with({
+          extra_args = { "--style=google", "--check-return-types=False", "--arg-type-hints-in-signature=False" },
+        }),
+        null_ls.builtins.code_actions.refactoring,
         -- null_ls.builtins.diagnostics.mypy,
         null_ls.builtins.diagnostics.pylint,
         null_ls.builtins.diagnostics.stylelint,
