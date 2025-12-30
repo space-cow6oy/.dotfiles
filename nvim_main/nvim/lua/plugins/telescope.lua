@@ -60,7 +60,7 @@ return {
     -- NOTE: FIND --------------------------------------------------------------------
     local builtin = require("telescope.builtin")
 
-    vim.keymap.set("n", "<leader>f", function()
+    vim.keymap.set("n", "<leader>j", function()
       local opts = require("telescope.themes").get_ivy({
 
         file_ignore_patterns = {
@@ -84,7 +84,7 @@ return {
       })
       builtin.find_files(opts)
     end, { desc = "Telescope find files" })
-    vim.keymap.set("n", "<leader>g", function()
+    vim.keymap.set("n", "<leader>f", function()
       local opts = require("telescope.themes").get_ivy({
 
         file_ignore_patterns = {

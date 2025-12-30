@@ -93,10 +93,10 @@ end)
 -- done
 
 -- HOP ------------------------------------------------------------------------------------
-vim.keymap.set("n", "f", function()
+vim.keymap.set("n", "F", function()
   require("hop").hint_words()
 end)
-vim.keymap.set("v", "f", function()
+vim.keymap.set("v", "F", function()
   require("hop").hint_words()
 end)
 -- SPIDER ---------------------------------------------------------------------------------
