@@ -60,7 +60,7 @@ return {
     -- NOTE: FIND --------------------------------------------------------------------
     local builtin = require("telescope.builtin")
 
-    vim.keymap.set("n", "<leader>t", function()
+    vim.keymap.set("n", "<leader>f", function()
       local opts = require("telescope.themes").get_ivy({
 
         file_ignore_patterns = {

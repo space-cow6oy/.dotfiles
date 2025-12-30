@@ -8,7 +8,9 @@ return {
           lua = { "stylua" },
           python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
           json = { "prettierd" },
-          markdown = { "prettierd" },
+          markdown = {
+            "prettierd",
+          },
           css = { "prettierd" },
           html = { "djlint" },
         },

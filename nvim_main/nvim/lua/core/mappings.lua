@@ -129,3 +129,10 @@ vim.api.nvim_set_keymap("n", "<space>yp", "<cmd>lua copy_relative_path()<cr><cr>
 -- DADBOD
 vim.keymap.set("n", "<leader>s", "{jV}k<plug>(DBUI_ExecuteQuery))")
 vim.keymap.set("n", "<leader>db", "<cmd>DBUI<CR>")
+
+-- TESTING
+vim.keymap.set("n", "<leader>tt", ":NeotestToggle<CR>", { desc = "Toggle Neotest Summary" })
+vim.keymap.set("n", "<leader>tr", ":NeotestRun<CR>", { desc = "Run nearest test/suite" })
+vim.keymap.set("n", "<leader>tf", ":NeotestRunFile<CR>", { desc = "Run current test file" })
+vim.keymap.set("n", "<leader>ts", ":NeotestSummary<CR>", { desc = "Open Neotest Summary" })
+vim.keymap.set("n", "<leader>to", ":NeotestOutput<CR>", { desc = "Open Neotest Output" })
