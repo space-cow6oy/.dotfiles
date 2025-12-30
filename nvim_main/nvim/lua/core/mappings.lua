@@ -6,7 +6,7 @@ vim.keymap.set({ "n", "v" }, "H", "^")
 vim.keymap.set({ "n", "v" }, "L", "$")
 vim.keymap.set({ "n", "v" }, "J", "<C-d>")
 vim.keymap.set({ "n", "v" }, "K", "<C-u>")
-vim.keymap.set("n", "<leader>H", "K")
+-- vim.keymap.set("n", "<leader>H", "K")
 
 -- Insert --------------------------------------------------------------------------------
 vim.keymap.set("i", "jj", "<Esc>")
@@ -30,7 +30,7 @@ vim.keymap.set("n", "<leader>c", "<c-l>")
 
 -- Errors -----------------------------------------------------------------------------
 vim.keymap.set("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", { desc = "Error float" })
-vim.keymap.set("n", "<leader>h", ":lua vim.lsp.buf.hover({border = 'rounded'})<CR>", { desc = "Error float" })
+-- vim.keymap.set("n", "<leader>h", ":lua vim.lsp.buf.hover({border = 'rounded'})<CR>", { desc = "Error float" })
 
 -- RESIZING ------------------------------------------------------------------------------
 vim.keymap.set("n", "=", [[<cmd>vertical resize +5<cr>]]) -- make the window biger vertically
@@ -105,9 +105,13 @@ vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<C
 vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
 
 -- SIGNARUTRE -----------------------------------------------------------------------------
-vim.keymap.set({ "n" }, "<leader>h", function()
+vim.keymap.set({ "n" }, "gs", function()
   vim.lsp.buf.signature_help({ border = "rounded" })
 end, { silent = true, noremap = true, desc = "toggle signature" })
+
+vim.keymap.set("n", "<leader>h", function()
+  vim.lsp.buf.hover({ border = "rounded" })
+end, { noremap = true, silent = true })
 
 -- COPE PATH --
 function copy_relative_path()

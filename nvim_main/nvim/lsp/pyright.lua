@@ -1,0 +1,15 @@
+-- return {
+--   cmd = { "pyright-langserver", "--stdio" },
+--   filetypes = { "python" },
+--
+--   settings = {
+--     python = {
+--       analysis = {
+--         typeCheckingMode = "off", -- Disables all type-checking rules
+--       },
+--     },
+--     pyright = {
+--       disableOrganizeImports = true,
+--     },
+--   },
+-- }

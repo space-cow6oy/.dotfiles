@@ -10,6 +10,9 @@ return {
         auto_install = false,
         ignore_install = {},
         modules = {},
+        highlight = {
+          enable = true,
+        },
       })
     end,
   },
