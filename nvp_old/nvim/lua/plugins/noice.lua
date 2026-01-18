@@ -24,6 +24,12 @@ return {
 						["vim.lsp.util.stylize_markdown"] = true,
 						["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 					},
+					hover = {
+						opts = { border = "double" },
+					},
+					signature = {
+						opts = { border = "double" },
+					},
 				},
 				-- you can enable a preset for easier configuration  require("noice").setup({
 				views = {

@@ -43,11 +43,8 @@ vim.api.nvim_del_augroup_by_id(vim.api.nvim_create_augroup("MarkdownHighlightGro
 -- })
 
 -- vim.api.nvim_create_autocmd({ "BufEnter" }, {
---   pattern = { "*.py", "*.lua" },
---   callback = function()
---     vim.opt_local.textwidth = 80
---     vim.api.nvim_set_option_value("colorcolumn", "81", {})
---   end,
+--   pattern = { "*.html" },
+--   callback = function() end,
 -- })
 
 -- Markdown teruns off _ Highlight
