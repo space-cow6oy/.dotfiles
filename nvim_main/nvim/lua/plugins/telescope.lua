@@ -135,90 +135,7 @@ return {
       })
       builtin.buffers(opts)
     end, { desc = "Telescope buffers" })
-    -- ------------- -----------------------------------------------------------------
-    -- NOTE: LSP ---------------------------------------------------------------------
-    vim.keymap.set("n", "gf", function()
-      local opts = require("telescope.themes").get_ivy({
 
-        file_ignore_patterns = {
-          "node_modules",
-          "venv",
-          "%.webp",
-          "lazy-lock.json",
-        },
-        wrap_results = true,
-        layout_strategy = "vertical",
-        layout_config = {
-          preview_height = 0.35,
-          vertical = {
-            height = 0.999,
-            preview_cutoff = 0,
-            prompt_position = "top",
-            width = 0.999,
-          },
-        },
-        mappings = default_mappings,
-        sort_mru = true,
-        sort_lastuesed = true,
-        initial_mode = "normal",
-      })
-      builtin.lsp_references(opts)
-    end, { desc = "LSP references" })
-    vim.keymap.set("n", "gi", function()
-      local opts = require("telescope.themes").get_ivy({
-
-        file_ignore_patterns = {
-          "node_modules",
-          "venv",
-          "%.webp",
-          "lazy-lock.json",
-        },
-        wrap_results = true,
-        layout_strategy = "vertical",
-        layout_config = {
-          preview_height = 0.35,
-          vertical = {
-            height = 0.999,
-            preview_cutoff = 0,
-            prompt_position = "top",
-            width = 0.999,
-          },
-        },
-        mappings = default_mappings,
-        sort_mru = true,
-        sort_lastuesed = true,
-        initial_mode = "normal",
-      })
-      builtin.lsp_implementations(opts)
-    end, { desc = "LSP implementation" })
-    vim.keymap.set("n", "gd", function()
-      local opts = require("telescope.themes").get_ivy({
-
-        file_ignore_patterns = {
-          "node_modules",
-          "venv",
-          "%.webp",
-          "lazy-lock.json",
-        },
-        wrap_results = true,
-        layout_strategy = "vertical",
-        layout_config = {
-          preview_height = 0.35,
-          vertical = {
-            height = 0.999,
-            preview_cutoff = 0,
-            prompt_position = "top",
-            width = 0.999,
-          },
-        },
-        mappings = default_mappings,
-        sort_mru = true,
-        sort_lastuesed = true,
-        initial_mode = "normal",
-        jump_type = "never",
-      })
-      require("telescope.builtin").lsp_definitions({})
-    end, { desc = "LSP definitions" })
     -- ------------- -----------------------------------------------------------------
     -- NOTE: Diagnostics -------------------------------------------------------------
     vim.keymap.set("n", "<leader>mm", function()
@@ -252,6 +169,7 @@ return {
       })
       require("telescope.builtin").diagnostics(opts)
     end, { desc = "Diagnostics" })
+
     vim.keymap.set("n", "<leader>mb", function()
       local opts = require("telescope.themes").get_ivy({
 

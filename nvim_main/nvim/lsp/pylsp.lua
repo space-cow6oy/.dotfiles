@@ -6,7 +6,7 @@ return {
   settings = {
     plugins = {
       pylsp_mypy = {
-        enabled = true,
+        enabled = false,
         live_mode = true,
       },
       pylint = {

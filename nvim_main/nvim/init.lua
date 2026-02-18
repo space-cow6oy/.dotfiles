@@ -19,6 +19,7 @@ vim.lsp.enable({
   "cssls",
   "html",
   "emmet_language_server",
+  "tailwindcss",
 })
 
 -- local accesskey = require("my.accesskey")

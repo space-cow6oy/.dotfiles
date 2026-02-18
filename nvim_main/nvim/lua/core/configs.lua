@@ -4,6 +4,7 @@ vim.wo.relativenumber = false
 vim.opt.iskeyword = { "@", "_", "-", "." }
 -- Endcoding
 vim.opt.encoding = "utf-8"
+vim.opt.swapfile = false
 vim.scriptencoding = "utf-8"
 -- Mouse
 vim.opt.mouse = "a"

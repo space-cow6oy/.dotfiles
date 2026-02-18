@@ -9,10 +9,10 @@ return {
   {
     "hrsh7th/nvim-cmp",
 
+    enabled = true,
     dependencies = {
       "tailwind-tools",
       "onsails/lspkind-nvim",
-      -- ...
     },
     config = function()
       local cmp = require("cmp")
@@ -65,9 +65,9 @@ return {
             name = "nvim_lsp",
             -- keyword_length = 1,
             -- max_item_count = 10,
-            options = {
-              ignore_server_names = { "html" }, -- Add more servers to exclude
-            },
+            -- options = {
+            --   ignore_server_names = { "html" }, -- Add more servers to exclude
+            -- },
           },
         }, {
           { name = "luasnip" },
@@ -82,15 +82,11 @@ return {
           { name = "render-markdown" },
         }),
       })
-      -- local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-      -- vim.lsp.config("lua_ls", {
-      --   capabilities = capabilities,
-      -- })
-      -- vim.lsp.enable("lua_ls")
-      -- require("lspconfig")["lua_ls"].setup({
-      --   capabilities = capabilities,
-      -- })
+      vim.lsp.config("tailwindcss", {
+        capabilities = capabilities,
+      })
     end,
   },
 }

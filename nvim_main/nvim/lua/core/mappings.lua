@@ -104,16 +104,22 @@ vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<C
 vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>")
 vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
 
+-- LSP -------------------------------------------------------------------------
 -- SIGNARUTRE -----------------------------------------------------------------------------
 vim.keymap.set({ "n" }, "gs", function()
   vim.lsp.buf.signature_help({ border = "rounded" })
 end, { silent = true, noremap = true, desc = "toggle signature" })
 
+-- HOVER
 vim.keymap.set("n", "<leader>h", function()
   vim.lsp.buf.hover({ border = "rounded" })
 end, { noremap = true, silent = true })
 
--- COPE PATH --
+vim.keymap.set("n", "gd", function()
+  vim.lsp.buf.definition({ border = "rounded" })
+end, { noremap = true, silent = true })
+
+-- COPY PATH --
 function copy_relative_path()
   local absolute_filepath = vim.fn.expand("%:p")
 
