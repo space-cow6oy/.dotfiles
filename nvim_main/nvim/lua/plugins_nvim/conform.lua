@@ -12,7 +12,8 @@ return {
             "prettierd",
           },
           css = { "prettierd" },
-          html = { "djlint" },
+          -- html = { "djlint" },
+          html = { "prettierd" },
         },
       })
       vim.api.nvim_create_autocmd("BufWritePre", {

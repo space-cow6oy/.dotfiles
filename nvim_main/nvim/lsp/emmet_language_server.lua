@@ -1,4 +1,4 @@
 return {
   cmd = { "emmet-language-server", "--stdio" },
-  filetypes = { "html" },
+  filetypes = { "html", "htmldjango" },
 }

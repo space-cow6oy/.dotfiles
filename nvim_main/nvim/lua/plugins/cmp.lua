@@ -3,38 +3,21 @@ return {
   { "hrsh7th/cmp-buffer" },
   { "hrsh7th/cmp-path" },
   { "hrsh7th/cmp-cmdline" },
-  { "L3MON4D3/LuaSnip" },
-  { "saadparwaiz1/cmp_luasnip" },
   -- { "hrsh7th/cmp-nvim-lsp-signature-help" },
   {
     "hrsh7th/nvim-cmp",
-
-    enabled = true,
-    dependencies = {
-      "tailwind-tools",
-      "onsails/lspkind-nvim",
-    },
+    -- dependencies = {
+    --   "tailwind-tools",
+    --   "onsails/lspkind-nvim",
+    -- },
     config = function()
       local cmp = require("cmp")
-
-      cmp.setup.filetype({ "sql" }, {
-        sources = {
-          { name = "vim-dadbod-completion" },
-          { name = "buffer" },
-        },
-      })
       cmp.setup({
-        formatting = {
-          format = require("lspkind").cmp_format({
-            before = require("tailwind-tools.cmp").lspkind_format,
-          }),
-        },
-        snippet = {
-          -- REQUIRED - you must specify a snippet engine
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body) -- For `luasnip` users.
-          end,
-        },
+        --   formatting = {
+        --     format = require("lspkind").cmp_format({
+        --       before = require("tailwind-tools.cmp").lspkind_format,
+        --     }),
+        -- },
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
@@ -60,32 +43,34 @@ return {
             end
           end, { "i", "s" }),
         }),
-        sources = cmp.config.sources({
+        sources = cmp.config.sources(
           {
-            name = "nvim_lsp",
-            -- keyword_length = 1,
-            -- max_item_count = 10,
-            -- options = {
-            --   ignore_server_names = { "html" }, -- Add more servers to exclude
-            -- },
+            {
+              name = "nvim_lsp",
+              -- options = {
+              --   ignore_server_names = { "html" }, -- Add more servers to exclude
+              -- },
+            },
           },
-        }, {
-          { name = "luasnip" },
-        }, {
-          { name = "buffer" },
-        }, {
-
-          { name = "nvim_lsp_signature_help" },
-        }, {
-
-          { name = "path" },
-          { name = "render-markdown" },
-        }),
+          { { name = "buffer" } },
+          { { name = "path" } },
+          { { name = "nvim_lsp_signature_help" } },
+          { { name = "luasnip" } },
+          { { name = "render-markdown" } }
+        ),
       })
+
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-      vim.lsp.config("tailwindcss", {
-        capabilities = capabilities,
+      -- vim.lsp.config("tailwindcss", {
+      --   capabilities = capabilities,
+      -- })
+
+      cmp.setup.filetype({ "sql" }, {
+        sources = {
+          { name = "vim-dadbod-completion" },
+          { name = "buffer" },
+        },
       })
     end,
   },

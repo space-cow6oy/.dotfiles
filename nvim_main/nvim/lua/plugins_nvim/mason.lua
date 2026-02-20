@@ -1,7 +1,6 @@
 return {
   {
     "williamboman/mason.nvim",
-
     config = function()
       require("mason").setup({
         opts = {
@@ -10,6 +9,15 @@ return {
             "ruff",
             "marksman",
             "djlsp",
+            "cssls",
+            "djlsp",
+            "emmet_language_server",
+            "html",
+            "lua_ls",
+            "pylsp",
+            "ruff",
+            "stylelint_lsp",
+            "stylua",
           },
         },
       })
@@ -19,21 +27,16 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "ty", "marksman" },
-      })
-    end,
-  },
-  {
-    "jay-babu/mason-nvim-dap.nvim",
-    config = function()
-      require("mason-nvim-dap").setup({
-        automatic_setup = true,
-        ensure_installed = { "debugpy" },
-        -- Handlers can automatically set up the adapter configuration
-        handlers = {
-          function(config)
-            require("mason-nvim-dap").default_setup(config)
-          end,
+        ensure_installed = {
+          "lua_ls",
+          "marksman",
+          "pylsp",
+          "ruff",
+          "tailwindcss",
+          "emmet_language_server",
+          "cssls",
+          "html",
+          "djlsp",
         },
       })
     end,

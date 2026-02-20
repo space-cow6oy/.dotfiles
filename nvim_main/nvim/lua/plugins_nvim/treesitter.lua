@@ -4,14 +4,15 @@ return {
     build = ":TSUpdate",
     config = function()
       require("nvim-treesitter.configs").setup({
-        -- A list of parser names, or "all" (the listed parsers MUST always be installed)
-        ensure_installed = { "lua", "javascript", "python", "markdown", "markdown_inline" },
-        sync_install = false,
-        auto_install = false,
-        ignore_install = {},
-        modules = {},
-        highlight = {
-          enable = true,
+        ensure_installed = {
+          "lua",
+          "javascript",
+          "python",
+          "markdown",
+          "markdown_inline",
+          "html",
+          "css",
+          "htmldjango",
         },
       })
     end,

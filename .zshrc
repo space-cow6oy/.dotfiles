@@ -40,7 +40,8 @@ alias lg='lazygit'
 
 # alias leet='XDG_CONFIG_HOME=~/.config/nvleet/ nvim leetcode.nvim'
 # alias nvleet='XDG_CONFIG_HOME=~/.config/nvleet/ nvim'
-alias nvim='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
+alias vi='XDG_CONFIG_HOME=~/.config/ nvim'
+# alias nvim='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
 alias nv='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
 # alias nv='nvim'
 
