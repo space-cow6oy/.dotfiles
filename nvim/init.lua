@@ -32,10 +32,24 @@ vim.api.nvim_set_keymap("i", "<M-j>", "<C-n>", { noremap = true, silent = true }
 vim.api.nvim_set_keymap("i", "<M-k>", "<C-p>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<M-h>", "<C-e>", { noremap = true, silent = true })
 
+
+-- wildmenu
 vim.opt.wildmenu = true
-vim.opt.wim="noselect:lastused,full"
+vim.opt.wim="noselect:lastused,longest"
+vim.o.wop="pum,tagfile"
+vim.o.wildignorecase = true
+vim.o.wildignore = "**/node_modules/**"
 vim.keymap.set("n","<leader>b", ":b <Tab>")
 vim.o.pumborder = "rounded"
 vim.opt.winborder="rounded"
+-- this makes remap tab in command line possible
 vim.o.wildcharm=9
+-- path for find all files recursively
+vim.opt.path=".,**"
+vim.keymap.set("n","<leader>f", ":find <Tab>")
 
+vim.api.nvim_set_keymap("c", "<M-j>", "<C-n>" , {})
+vim.api.nvim_set_keymap("c", "<M-h>", "<C-c>", {})
+vim.api.nvim_set_keymap("c", "<M-k>", "<C-p>", {})
+vim.api.nvim_set_keymap("c", "<M-l>", "<Cr>", {})
+-- vim.api.nvim_set_keymap("c", "<M-l>", "<C-y>", {})
