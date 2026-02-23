@@ -1,0 +1,1 @@
+/home/artom/.dotfiles/nvp/nvim/init.lua

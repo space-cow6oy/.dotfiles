@@ -6,14 +6,14 @@ return {
       require("conform").setup({
         formatters_by_ft = {
           lua = { "stylua" },
-          python = { "ruff_format", "ruff_organize_imports", "ruff_fix" },
-          json = { "prettierd" },
-          markdown = {
-            "prettierd",
-          },
-          css = { "prettierd" },
-          -- html = { "djlint" },
-          html = { "prettierd" },
+          jsx = { "prettier", "prettierd" },
+          json = { "prettier", "prettierd" },
+          javascript = { "prettier", "prettierd" },
+          javascriptreact = { "prettier", "prettierd" },
+          css = { "prettier", "prettierd" },
+          html = { "prettier", "prettierd" },
+          python = { "ruff_format" },
+		  scala={"scalafmt"}
         },
       })
       vim.api.nvim_create_autocmd("BufWritePre", {
