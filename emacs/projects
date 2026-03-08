@@ -1,0 +1,4 @@
+;;; -*- lisp-data -*-
+(("/home/artem/projects/ASAP/")
+ ("/home/artem/.config/emacs/elpa/evil-collection/")
+ ("/home/artem/.config/emacs/elpa/ox-html-stable-ids/"))
