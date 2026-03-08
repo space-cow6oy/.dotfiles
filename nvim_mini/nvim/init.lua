@@ -40,6 +40,7 @@ vim.api.nvim_set_keymap("i", "<M-j>", "<C-n>", { noremap = true, silent = true }
 vim.api.nvim_set_keymap("i", "<M-k>", "<C-p>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<M-h>", "<C-e>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<M-l>", "<C-y>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("i", "<C-space>", "<C-x><C-o>", { noremap = true, silent = true })
 
 
 -- wildmenu
@@ -67,21 +68,20 @@ vim.api.nvim_set_keymap("c", "<M-l>", "<Cr>", {})
 vim.pack.add({"https://github.com/mason-org/mason.nvim"})
 mason = require("mason")
 mason.setup({
-	  ensure_installed = {
-		"lus_ls",
-		"ruff",
-		"marksman",
-		"djlsp",
-		"cssls",
-		"djlsp",
-		"emmet_language_server",
-		"html",
-		"lua_ls",
-		"pylsp",
-		"ruff",
-		"stylelint_lsp",
-		"stylua",
-	  }
+  ensure_installed = {
+	"lus_ls",
+	"ruff",
+	"marksman",
+	"djlsp",
+	"cssls",
+	"djlsp",
+	"emmet_language_server",
+	"lua_ls",
+	"pylsp",
+	"ruff",
+	"stylelint_lsp",
+	"stylua",
+  }
 })
 
 vim.pack.add({"https://github.com/mason-org/mason-lspconfig.nvim"})
@@ -95,8 +95,6 @@ mason_lsp.setup({
           "ruff",
           "tailwindcss",
           "emmet_language_server",
-          "cssls",
-          "html",
           "djlsp",
         }
 })
@@ -108,16 +106,16 @@ vim.pack.add{
 }
 vim.lsp.enable({
   "stylua",
-  "stylelint_lsp",
   "lua_ls",
+  -- "stylelint_lsp",
   "pylsp",
   "marksman",
   "djlsp",
   "ruff",
-  "cssls",
-  "html",
+  -- "cssls",
   "emmet_language_server",
   "tailwindcss",
+  "superhtml"
 })
 
 vim.keymap.set({ "n" }, "gs", function()
@@ -149,6 +147,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 vim.cmd [[set completeopt+=menuone,noselect,popup]]
 
+ vim.api.nvim_create_autocmd("Filetype", {
+ 	pattern = { "*.html", "shtml", "htm" },
+ 	callback = function()
+ 		vim.lsp.start({
+ 			name = "superhtml",
+ 			cmd = { "superhtml", "lsp" },
+ 			root_dir = vim.fs.dirname(vim.fs.find({".git"}, { upward = true })[1])
+ 		})
+ 	end
+ })
+
 -- TREESITTER
 vim.pack.add({"https://github.com/nvim-treesitter/nvim-treesitter"})
 treesitter = require("nvim-treesitter")
@@ -164,7 +173,7 @@ treesitter = require("nvim-treesitter")
 --       })
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { "*.py", "*.lua", "html", "*.md" },
+  pattern = { "*.py", "*.lua", "*.html", "*.md" },
   callback = function() vim.treesitter.start() end,
 })
 
@@ -172,7 +181,8 @@ vim.api.nvim_create_autocmd('FileType', {
 -- AUTOTAG
 vim.pack.add({"https://github.com/windwp/nvim-ts-autotag"})
 autotag = require("nvim-ts-autotag")
-autotag.setup()
+autotag.setup({})
+
 
 
 -- AUTOPAIRS
