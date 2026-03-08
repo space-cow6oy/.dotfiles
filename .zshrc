@@ -38,15 +38,9 @@ alias cd="z"
 alias t='tmux'
 alias lg='lazygit'
 
-alias vi='XDG_CONFIG_HOME=~/.config/nvim_mini/ nvim'
-# alias nvim='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
+# alias vi='XDG_CONFIG_HOME=~/.config/nvim_mini/ nvim'
+alias nvim='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
 
-# alias nvr='XDG_CONFIG_HOME=~/.config/nvr/ nvim'
-# alias nvp='XDG_CONFIG_HOME=~/.config/nvp/ nvim'
-# alias snv='sudo nvim'
-# alias cddots='cd ~/.dotfiles'
-# alias nvconf='cd ~/.dotfiles/nvim && nvim'
-alias as='cd ~/ASAP'
 
 
 

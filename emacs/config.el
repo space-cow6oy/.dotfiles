@@ -1,9 +1,12 @@
 ;;; Startup
 ;;; PACKAGE LIST
 (setq package-archives 
-      '(("melpa" . "https://melpa.org/packages/")
-        ("elpa" . "https://elpa.gnu.org/packages/")))
+      '(
+		("elpa" . "https://elpa.nongnu.org/nongnu/")))
 
+; (setq package-archives 
+;       '(("melpa" . "https://melpa.org/packages/")
+;         ("elpa" . "https://elpa.gnu.org/packages/")))
 ;;; BOOTSTRAP USE-PACKAGE
 (package-initialize)
 (setq use-package-always-ensure t)
