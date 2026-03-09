@@ -38,8 +38,8 @@ alias cd="z"
 alias t='tmux'
 alias lg='lazygit'
 
-# alias vi='XDG_CONFIG_HOME=~/.config/nvim_mini/ nvim'
-alias nvim='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
+alias vi='nvim'
+# alias nvim='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
 
 
 
