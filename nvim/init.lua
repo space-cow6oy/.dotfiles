@@ -140,10 +140,11 @@ vim.keymap.set({ "n", "o", "x" }, "w", "<cmd>lua require('spider').motion('w')<C
 vim.keymap.set({ "n", "o", "x" }, "e", "<cmd>lua require('spider').motion('e')<CR>")
 vim.keymap.set({ "n", "o", "x" }, "b", "<cmd>lua require('spider').motion('b')<CR>")
 
-
+-- NEOGIT
 vim.pack.add({"https://github.com/nvim-lua/plenary.nvim"})
 vim.pack.add({"https://github.com/NeogitOrg/neogit"})
 neogit = require("neogit")
 neogit.setup()
 
-
+-- Or via lua api
+vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })

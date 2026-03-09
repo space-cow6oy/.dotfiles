@@ -13,10 +13,10 @@ set cpo&vim
 if has('unix')
   execute $'CompilerSet makeprg=/usr/bin/env\ PYTHONWARNINGS=ignore\ pytest\ {escape(get(b:, 'pytest_makeprg_params', get(g:, 'pytest_makeprg_params', '--tb=short --quiet')), ' \|"')}'
 elseif has('win32')
-  execute $'CompilerSet makeprg=set\ PYTHONWARNINGS=ignore\ &&\ pytest\ {escape(get(b:, 'pytest_makeprg_params', get(g:, 'pytest_makeprg_params', '--tb=short --quiet')), ' \|"')}'
+  execute $'CompilerSet makeprg=set\ PYTHONWARNINGS=ignore\ &&\ pytest\ &\ {escape(get(b:, 'pytest_makeprg_params', get(g:, 'pytest_makeprg_params', '--tb=short --quiet')), ' \|"')}'
 else
   CompilerSet makeprg=pytest\ --tb=short\ --quiet
-  execute $'CompilerSet makeprg=pytest\ {escape(get(b:, 'pytest_makeprg_params', get(g:, 'pytest_makeprg_params', '--tb=short --quiet')), ' \|"')}'
+  execute $'CompilerSet makeprg=pytest\ &\ {escape(get(b:, 'pytest_makeprg_params', get(g:, 'pytest_makeprg_params', '--tb=short --quiet')), ' \|"')}'
 endif
 
 " Pytest syntax errors                                          {{{2

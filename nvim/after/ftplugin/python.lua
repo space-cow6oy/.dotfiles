@@ -56,3 +56,15 @@ api.nvim_buf_set_keymap(
   opts
 )
 
+api.nvim_buf_set_keymap(
+  0,
+  'n',
+  '<leader>pt',
+  ':compiler pytest<CR>:make<CR>',
+  opts
+)
+
+if vim.fn.executable("ruff") == 1 then
+  vim.opt_local.formatprg = "ruff format -q -"
+  vim.opt_local.formatexpr = ""
+end
