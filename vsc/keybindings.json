@@ -1,0 +1,140 @@
+// Place your key bindings in this file to override the defaults
+[
+  {
+    "key": "alt+j",
+    "command": "selectNextSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "alt+k",
+    "command": "selectPrevSuggestion",
+    "when": "editorTextFocus && suggestWidgetMultipleSuggestions && suggestWidgetVisible"
+  },
+  {
+    "key": "alt+l",
+    "command": "acceptSelectedSuggestion",
+    "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "hideSuggestWidget",
+    "when": "acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+  },
+  {
+    "key": "alt+j",
+    "command": "workbench.action.quickOpenNavigateNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "alt+K",
+    "command": "workbench.action.quickOpenNavigatePrevious",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "alt+H",
+    "command": "workbench.action.closeQuickOpen",
+    "when": "inQuickOpen"
+  },
+  {
+    "command": "runCommands",
+    "key": "alt+e", // whatever keybinding
+    "when": "editorTextFocus",
+    "args": {
+      "commands": [
+        "workbench.files.action.focusFilesExplorer"
+      ]
+    }
+  },
+  {
+    "command": "runCommands",
+    "key": "alt+e", // whatever keybinding
+    "when": "sideBarFocus",
+    "args": {
+      "commands": [
+        "workbench.action.closeSidebar"
+      ]
+    }
+  },
+  {
+    "key": "alt+j",
+    "command": "list.focusDown",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "list.focusUp",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "list.expand",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "list.collapse",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "command": "runCommands",
+    "key": "l", // whatever keybinding
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceIsFolder && !inputFocus",
+    "args": {
+      "commands": [
+        "explorer.openAndPassFocus",
+        "workbench.action.closeSidebar"
+      ]
+    }
+  },
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletFocus"
+  },
+  {
+    "command": "renameFile",
+    "key": "alt+r",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "command": "deleteFile",
+    "key": "alt+d",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "alt+t",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "terminal.active"
+  },
+  {
+    "key": "alt+g",
+    "command": "gigacode.sidebar.focus",
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "alt+g",
+    "command": "workbench.action.toggleMaximizedAuxiliaryBar",
+    "when": "editorTextFocus",
+  },
+  {
+    "key": "alt+g",
+    "command": "workbench.action.closeAuxiliaryBar",
+    "when": "!editorTextFocus",
+  },
+  {
+    "key": "alt+g alt+c",
+    "command": "git.commitMessageAccept",
+    "when": "config.git.enabled && !git.missing && editorLangId == 'git-commit' && gitOpenRepositoryCount != '0'"
+  },
+  {
+      "key": "alt+g alt+p",
+      "command": "workbench.action.tasks.runTask",
+      "args": "Custom Git Push"
+  }
+
+]

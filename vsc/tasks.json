@@ -1,0 +1,12 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Custom Git Push",
+            "type": "shell",
+            "command": "git push origin-gitverse $(git symbolic-ref --short HEAD); git push origin $(git symbolic-ref --short HEAD)"
+        }
+    ]
+}
