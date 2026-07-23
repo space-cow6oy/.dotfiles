@@ -112,19 +112,19 @@
     "when": "terminal.active"
   },
   {
-    "key": "alt+g",
+    "key": "alt+i",
     "command": "gigacode.sidebar.focus",
-    "when": "editorTextFocus",
+    "when": "editorTextFocus"
   },
   {
-    "key": "alt+g",
+    "key": "alt+i",
     "command": "workbench.action.toggleMaximizedAuxiliaryBar",
-    "when": "editorTextFocus",
+    "when": "editorTextFocus"
   },
   {
-    "key": "alt+g",
+    "key": "alt+i",
     "command": "workbench.action.closeAuxiliaryBar",
-    "when": "!editorTextFocus",
+    "when": "!editorTextFocus"
   },
   {
     "key": "alt+g alt+c",

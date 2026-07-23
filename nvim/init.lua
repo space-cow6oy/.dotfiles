@@ -14,7 +14,8 @@ vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.signcolumn="yes:1"
-vim.cmd([[colorscheme retrobox]])
+vim.opt.termguicolors = true
+vim.cmd.colorscheme('retrobox')
 
 -- RUSSIAN
 local cmd = vim.cmd
@@ -82,8 +83,6 @@ autocmd("FileType", {
   desc = "Disable New Line Comment",
 })
 
--- DEPS
--- require('deps')
 
 
 -- MINI ICONS
@@ -148,3 +147,7 @@ neogit.setup()
 
 -- Or via lua api
 vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
+
+
+-- DEPS
+require('deps')

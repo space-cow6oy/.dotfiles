@@ -6,9 +6,6 @@ mason.setup({
 	"lus_ls",
 	"ruff",
 	"marksman",
-	"djlsp",
-	"cssls",
-	"djlsp",
 	"emmet_language_server",
 	"lua_ls",
 	"pylsp",
@@ -30,6 +27,7 @@ mason_lsp.setup({
           "tailwindcss",
           "emmet_language_server",
           "djlsp",
+		  "tsgo"
         }
 })
 
@@ -41,15 +39,12 @@ vim.pack.add{
 vim.lsp.enable({
   "stylua",
   "lua_ls",
-  -- "stylelint_lsp",
   "pylsp",
   "marksman",
-  "djlsp",
   "ruff",
-  -- "cssls",
   "emmet_language_server",
   "tailwindcss",
-  "superhtml"
+  "tsgo"
 })
 
 vim.keymap.set({ "n" }, "gs", function()
@@ -80,29 +75,57 @@ vim.api.nvim_create_autocmd('LspAttach', {
 })
 
 -- TREESITTER
-vim.pack.add({"https://github.com/nvim-treesitter/nvim-treesitter"})
+vim.pack.add(
+	{{
+		src="https://github.com/nvim-treesitter/nvim-treesitter",
+		version = 'main'
+	}	}
+)
 treesitter = require("nvim-treesitter")
 -- строку ниже нужно запустить один раз, чтобы он не устанавливал 
 -- при каждом запуске
--- treesitter.install({
---           "lua",
---           "javascript",
---           "python",
---           "markdown",
---           "markdown_inline",
---           "html",
---           "css",
---           "htmldjango",
---       })
+treesitter.install({
+          "lua",
+          "javascript",
+          "python",
+          "markdown",
+          "markdown_inline",
+          "html",
+          "css",
+          "htmldjango",
+			"tsx"
+      })
+
+vim.pack.add {
+  { src = "https://github.com/romus204/tree-sitter-manager.nvim" }
+}
+
+require("tree-sitter-manager").setup()
+
+
 
 vim.api.nvim_create_autocmd('FileType', {
-  pattern = { "*.py", "*.lua", "*.html", "*.md" },
+  pattern = { "*.py", "*.lua", "*.html", "*.md", "*.js", "*.jsx" },
   callback = function() vim.treesitter.start() end,
 })
+
 
 -- AUTOTAG
 vim.pack.add({"https://github.com/windwp/nvim-ts-autotag"})
 autotag = require("nvim-ts-autotag")
-autotag.setup({})
-
-
+autotag.setup({
+	 opts = {
+    -- Defaults
+    enable_close = true, -- Auto close tags
+    enable_rename = true, -- Auto rename pairs of tags
+    enable_close_on_slash = false -- Auto close on trailing </
+  },
+  }
+)
+-- DISABLE tailwind colors highlight in jsx files
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(ev)
+    -- Disable document colors
+    vim.lsp.document_color.enable(false, { bufnr = ev.buf })
+  end,
+})
