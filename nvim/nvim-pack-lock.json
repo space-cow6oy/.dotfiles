@@ -32,6 +32,10 @@
       "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
       "src": "https://github.com/windwp/nvim-autopairs"
     },
+    "nvim-highlight-colors": {
+      "rev": "e4c7af0211866162d999ce0bdd6a029302e19139",
+      "src": "https://github.com/brenoprata10/nvim-highlight-colors"
+    },
     "nvim-lspconfig": {
       "rev": "5a855bcfec7973767a1a472335684bbd71d2fa2b",
       "src": "https://github.com/neovim/nvim-lspconfig"
@@ -42,7 +46,8 @@
     },
     "nvim-treesitter": {
       "rev": "dc42c209f3820bdfaae0956f15de29689aa6b451",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
     },
     "nvim-ts-autotag": {
       "rev": "8e1c0a389f20bf7f5b0dd0e00306c1247bda2595",
@@ -55,6 +60,14 @@
     "tabout.nvim": {
       "rev": "9a3499480a8e53dcaa665e2836f287e3b7764009",
       "src": "https://github.com/abecodes/tabout.nvim"
+    },
+    "tree-sitter-manager.nvim": {
+      "rev": "09e3a321eea8100cacd2e759c3a6c9d350295fab",
+      "src": "https://github.com/romus204/tree-sitter-manager.nvim"
+    },
+    "y9nika.nvim": {
+      "rev": "18827266802e8e105c724c72a84c2c59beb5d90f",
+      "src": "https://github.com/y9san9/y9nika.nvim"
     }
   }
 }

@@ -51,14 +51,23 @@ vim.opt.wim="noselect:lastused,longest"
 vim.o.wop="pum,tagfile"
 vim.o.wildignorecase = true
 vim.o.wildignore = "**/node_modules/**"
+vim.o.wildignore = "**/venv/**"
 vim.keymap.set("n","<leader>b", ":b <Tab>")
 vim.o.pumborder = "rounded"
 vim.opt.winborder="rounded"
 -- this makes remap tab in command line possible
 vim.o.wildcharm=9
+
+-- Built In Find
 -- path for find all files recursively
 vim.opt.path=".,**"
-vim.keymap.set("n","<leader>f", ":find <Tab>")
+vim.keymap.set("n","<leader>F", ":find <Tab>")
+vim.opt.path:append("**")
+-- Настраиваем генерацию списка файлов через unix find при нажатии Tab
+-- Игнорируем node_modules, .git, dist и build
+if vim.fn.executable("find") == 1 then
+  vim.opt.wildignore:append({ "*/node_modules/*", "*/.git/*", "*/dist/*", "*/build/*" })
+end
 
 vim.api.nvim_set_keymap("c", "<M-j>", "<C-n>" , {})
 vim.api.nvim_set_keymap("c", "<M-h>", "<C-c>", {})
@@ -145,9 +154,13 @@ vim.pack.add({"https://github.com/NeogitOrg/neogit"})
 neogit = require("neogit")
 neogit.setup()
 
--- Or via lua api
-vim.keymap.set("n", "<leader>gg", "<cmd>Neogit<cr>", { desc = "Open Neogit UI" })
 
+-- FIND
+require('find')
 
 -- DEPS
 require('deps')
+
+-- GREP
+require('grep')
+
