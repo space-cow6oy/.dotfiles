@@ -58,6 +58,17 @@ vim.opt.winborder="rounded"
 -- this makes remap tab in command line possible
 vim.o.wildcharm=9
 
+-- QUICKFIX
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "qf", -- тип файла 'qf' означает quickfix
+  callback = function()
+    -- Включаем перенос длинных строк
+    vim.wo.wrap = true
+    -- Опционально: переносить строки по словам, а не резать посреди буквы
+    vim.wo.linebreak = true
+  end,
+})
+
 -- Built In Find
 -- path for find all files recursively
 vim.opt.path=".,**"

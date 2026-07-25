@@ -28,21 +28,17 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-alias r="ranger"
-alias c="clear"
-
 alias ls="eza --icons=always"
 eval "$(zoxide init zsh)"
 alias cd="z"
-
-alias t='tmux'
-alias lg='lazygit'
+alias c="clear"
 
 alias vi='nvim'
+alias dots='cd ~/.dotfiles/'
+alias nvc='cd ~/.dotfiles/nvim && nvim'
+alias plat='cd ~/projects/platform/ && nvim'
+
 # alias nvim='XDG_CONFIG_HOME=~/.config/nvim_main/ nvim'
-
-
-
 
 # completion using arrow keys (based on history)
 bindkey '^[[h' history-search-backward
