@@ -5,3 +5,5 @@ vim.opt_local.softtabstop = 2
 
 vim.bo.filetype = 'javascriptreact'
 vim.bo.syntax = 'javascriptreact'
+
+vim.bo.commentstring = '{/* %s */}'
