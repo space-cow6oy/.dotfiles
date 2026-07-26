@@ -12,9 +12,21 @@
       "rev": "44d1e90e1f66e077268191e3ee9d2ac97cc18e65",
       "src": "https://github.com/mason-org/mason.nvim"
     },
+    "mini-git": {
+      "rev": "62aa54f41c50181dceff90b55f989efe69ad198c",
+      "src": "https://github.com/nvim-mini/mini-git"
+    },
+    "mini.base16": {
+      "rev": "d5f7b0db4559eb14c1c6c9e88aae95b9a79df408",
+      "src": "https://github.com/nvim-mini/mini.base16"
+    },
     "mini.files": {
       "rev": "57eb96a828f80efb8095a611e3aafcfa43548f8b",
       "src": "https://github.com/nvim-mini/mini.files"
+    },
+    "mini.hues": {
+      "rev": "9656ef61a857c715e428661b8ae5d8d6058646a9",
+      "src": "https://github.com/nvim-mini/mini.hues"
     },
     "mini.icons": {
       "rev": "5b9076dae1bfbe47ba4a14bc8b967cde0ab5d77e",
@@ -64,6 +76,10 @@
     "tree-sitter-manager.nvim": {
       "rev": "09e3a321eea8100cacd2e759c3a6c9d350295fab",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
+    },
+    "vim-fugitive": {
+      "rev": "3b753cf8c6a4dcde6edee8827d464ba9b8c4a6f0",
+      "src": "https://github.com/tpope/vim-fugitive"
     },
     "vim-jsx-improve": {
       "rev": "b179bf9a3901ccc6afcaa3abc9c93bae450f3339",

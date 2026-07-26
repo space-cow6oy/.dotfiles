@@ -15,7 +15,6 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.signcolumn="yes:1"
 vim.opt.termguicolors = true
-vim.cmd.colorscheme('retrobox')
 
 -- RUSSIAN
 local cmd = vim.cmd
