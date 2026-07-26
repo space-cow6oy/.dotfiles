@@ -1,7 +1,6 @@
 require('base')
 require('find')
 require('grep')
-require('jsx')
 require('mini_files')
 require('color')
 require('git')

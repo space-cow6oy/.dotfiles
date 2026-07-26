@@ -68,6 +68,10 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.keymap.set("n", "<C-j>", "<cmd>cnext<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<C-h>", "<cmd>cclose<CR>")
+
 -- Built In Find
 -- path for find all files recursively
 vim.opt.path=".,**"
