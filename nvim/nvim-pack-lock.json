@@ -65,6 +65,10 @@
       "rev": "09e3a321eea8100cacd2e759c3a6c9d350295fab",
       "src": "https://github.com/romus204/tree-sitter-manager.nvim"
     },
+    "vim-jsx-improve": {
+      "rev": "b179bf9a3901ccc6afcaa3abc9c93bae450f3339",
+      "src": "https://github.com/neoclide/vim-jsx-improve"
+    },
     "y9nika.nvim": {
       "rev": "18827266802e8e105c724c72a84c2c59beb5d90f",
       "src": "https://github.com/y9san9/y9nika.nvim"

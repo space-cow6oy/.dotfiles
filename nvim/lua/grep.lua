@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>g", function()
 
   -- 3. Формируем финальную команду терминала
   local cmd = string.format(
-    "git grep -n --column -F --no-color --untracked %s -- . %s",
+    "git grep -i -n --column -F --no-color --untracked %s -- . %s",
     vim.fn.shellescape(search),
     exclude_str
   )
