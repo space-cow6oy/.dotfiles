@@ -10,8 +10,7 @@ change path to public keys in ~/.ssh/config  \
 ln -s ~/.dotfiles/.gitconfig ~/  \
 cd ~/.dotfiles \
 git remote add origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git \
-
-git remote set-url origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git  \
+git remote set-url origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git \
 
 
 # font
@@ -70,7 +69,7 @@ Tactile
 ln -s ~/.dotfiles/.aerospace.toml ~/
 
 # круглые углы -> прямые углы
-defaults write -g NSConvolutionOverride1 -float 1.4e-45
+defaults write -g NSConvolutionOverride1 -float 1.4e-45\
 defaults write -g NSConvolutionOverride2 -float 1.4e-45
 
 # Workspace Management (linux)
@@ -86,14 +85,8 @@ debian settings -> keyboard shortcuts -> super+h -> super+z
 # Kitty
 sudo apt install kitty
 
-rm ~/.config/kitty 
-ln -s ~/.dotfiles/kitty ~/.config/kitty/
-
-это сделано для kitty, повторять не нужно
-если тем нет, то git clone --depth 1 https://github.com/dexpota/kitty-themes.git ~/.dotfiles/kitty/kitty-themes
-cd ~/.dotfiles/kitty
-ln -s ./kitty-themes/themes/gruvbox_dark.conf ~/.dotfiles/kitty/theme.conf
-
+mkdir ~/.config/kitty 
+ln -s ~/.dotfiles/kitty/kitty.conf ~/.config/kitty/
 
 
 # termperature monitoring
@@ -104,8 +97,6 @@ watch -n 1 sensors
 
 # zsh
 vi ~/.dotfiles/zsh_man
-
-
 
 
 # neovim
