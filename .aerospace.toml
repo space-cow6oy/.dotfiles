@@ -1,0 +1,71 @@
+# Обязательная версия конфига для macOS Golden Gate
+config-version = 2
+
+persistent-workspaces = ["1", "2", "3", "4", "5"]
+
+# Стартовые команды
+after-startup-command = []
+
+# Разметка: аккордеон на весь рабочий стол
+default-root-container-layout = 'tiles'
+default-root-container-orientation = 'auto'
+
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+
+# Отступы между окнами и краями экрана
+[gaps]
+inner.horizontal = 0
+inner.vertical = 0
+outer.left = 0
+outer.bottom = -2
+outer.top = 0
+outer.right = 0
+
+# Горячие клавиши
+[mode.main.binding]
+
+# Переключение между рабочими столами
+ctrl-1 = 'workspace 1'
+ctrl-2 = 'workspace 2'
+ctrl-3 = 'workspace 3'
+ctrl-4 = 'workspace 4'
+ctrl-5 = 'workspace 5'
+ctrl-6 = 'workspace 6'
+ctrl-7 = 'workspace 7'
+ctrl-8 = 'workspace 8'
+ctrl-9 = 'workspace 9'
+ctrl-0 = 'workspace 10'
+
+# Перенос активного окна на рабочие столы
+shift-ctrl-1 = 'move-node-to-workspace 1'
+shift-ctrl-2 = 'move-node-to-workspace 2'
+shift-ctrl-3 = 'move-node-to-workspace 3'
+shift-ctrl-4 = 'move-node-to-workspace 4'
+shift-ctrl-5 = 'move-node-to-workspace 5'
+shift-ctrl-6 = 'move-node-to-workspace 6'
+shift-ctrl-7 = 'move-node-to-workspace 7'
+shift-ctrl-8 = 'move-node-to-workspace 8'
+shift-ctrl-9 = 'move-node-to-workspace 9'
+shift-ctrl-0 = 'move-node-to-workspace 10'
+
+# Telegram -> рабочий стол 4
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = com.tdesktop.Telegram'
+run = 'move-node-to-workspace 4'
+
+# Firefox -> рабочий стол 3
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = org.mozilla.firefox'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if = 'test %{app-bundle-id} = net.kovidgoyal.kitty'
+run = 'move-node-to-workspace 1'
+
+
+# Все остальные приложения -> рабочий стол 5
+[[on-window-detected]]
+if = 'true'
+run = 'move-node-to-workspace 5'
