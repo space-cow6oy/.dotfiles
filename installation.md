@@ -6,11 +6,11 @@ gitverse -> add public keys to them)
 git clone .dotfiles (only through ssh!!!) \
 cp ~/.dotfiles/config ~/.ssh/ (copy because ssh keys names are different for
 different machines) \
-change path to public keys in ~/.ssh/config  \
+change path to public keys in ~/.ssh/config  (vim ~/.ssh/config) \
 ln -s ~/.dotfiles/.gitconfig ~/  \
 cd ~/.dotfiles \
 git remote add origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git \
-git remote set-url origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git \
+git remote set-url origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git
 
 
 # font
