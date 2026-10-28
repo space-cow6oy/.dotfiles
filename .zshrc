@@ -64,3 +64,5 @@ export NVM_DIR="$HOME/.nvm"
 
 
 export PATH="$HOME/bin:$PATH"
+bindkey '^[l' autosuggest-accept
+bindkey '¬' autosuggest-accept

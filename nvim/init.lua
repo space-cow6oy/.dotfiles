@@ -5,7 +5,9 @@ require('mini_files')
 require('color')
 require('git')
 require('treesitter')
--- require('deps')
+require('deps')
+require('mac_keys')
+-- require('linux_keys')
 
 -- TODO
 

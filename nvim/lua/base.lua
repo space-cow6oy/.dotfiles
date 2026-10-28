@@ -37,10 +37,6 @@ vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("t", "kj", "<C-\\><C-n>")
 vim.keymap.set("n", "<leader>cc", ":cclose<CR>")
 vim.keymap.set("n", "<leader>co", ":copen<CR>")
-vim.api.nvim_set_keymap("i", "<M-j>", "<C-n>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<M-k>", "<C-p>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<M-h>", "<C-e>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("i", "<M-l>", "<C-y>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("i", "<C-space>", "<C-x><C-o>", { noremap = true, silent = true })
 
 
@@ -82,12 +78,6 @@ vim.opt.path:append("**")
 if vim.fn.executable("find") == 1 then
   vim.opt.wildignore:append({ "*/node_modules/*", "*/.git/*", "*/dist/*", "*/build/*" })
 end
-
-vim.api.nvim_set_keymap("c", "<M-j>", "<C-n>" , {})
-vim.api.nvim_set_keymap("c", "<M-h>", "<C-c>", {})
-vim.api.nvim_set_keymap("c", "<M-k>", "<C-p>", {})
-vim.api.nvim_set_keymap("c", "<M-l>", "<Cr>", {})
--- vim.api.nvim_set_keymap("c", "<M-l>", "<C-y>", {})
 
 
 vim.cmd [[set completeopt+=menuone,noselect,popup]]
