@@ -1,15 +1,17 @@
 # git
-sudo apt install git
-ssh-keygen -t ed25519 -C "artyomvoloshenko@gmail.com" (for github and gitverse -> add public keys to them)
+sudo apt install git \
+ssh-keygen -t ed25519 -C "artyomvoloshenko@gmail.com"  (for github and 
+gitverse -> add public keys to them)
 
-git clone .dotfiles (only through ssh!!!)
-cp ~/.dotfiles/config ~/.ssh/ (copy because ssh keys names are different for different machines)
-change path to public keys in ~/.ssh/config 
-ln -s ~/.dotfiles/.gitconfig ~/ 
-cd ~/.dotfiles
-git remote add origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git 
+git clone .dotfiles (only through ssh!!!) \
+cp ~/.dotfiles/config ~/.ssh/ (copy because ssh keys names are different for
+different machines) \
+change path to public keys in ~/.ssh/config  \
+ln -s ~/.dotfiles/.gitconfig ~/  \
+cd ~/.dotfiles \
+git remote add origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git \
 
-git remote set-url origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git  
+git remote set-url origin-gitverse ssh://git@gitverse.ru:2222/dam.hay/.dotfiles.git  \
 
 
 # font
@@ -64,8 +66,14 @@ Highlight Focus
 Tactile
 
 
+# Workspace Management (linux)
+ln -s ~/.dotfiles/.aerospace.toml ~/
 
-# Workspace Management
+# круглые углы -> прямые углы
+defaults write -g NSConvolutionOverride1 -float 1.4e-45
+defaults write -g NSConvolutionOverride2 -float 1.4e-45
+
+# Workspace Management (linux)
 sudo apt install wmctrl
 
 in settings custom shortcuts:
